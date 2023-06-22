@@ -15,3 +15,19 @@ For now only VGA is supported. If you don't have extended memory - use SET DPMIL
 
 Windows: Any Win32, including Windows 3.x + Win32s installed and Windows NT 3.x, Windows 9x/NT 4.x are recommended.
 For now only GDI is supported.
+
+Modes supported:
+DOS:
+1) VGA 320x200x70x8, VSync supported, Copy and Swap supported
+2) VGA 320x200x70x8X, VSync supported, Flip, Copy and Swap suppoted
+Windows:
+1) 8bit only, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported
+
+OS support:
+DOS:
+  Timer settings: RTC or PIT, more precision - bigger perofrmance penalty
+
+Windows 9x/NT 4.x:
+  Async timer for smoother controls, but can slow game down
+  Async rendering for smoother FPS
+  Switching both off essentially turns driver into Windows 3.x+Win32s/NT 3.x one
