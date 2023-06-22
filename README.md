@@ -26,7 +26,7 @@ DOS:
 2) VGA 320x200x70x8X, VSync supported, Flip, Copy and Swap suppoted
 
 Windows:
-1) 8bit only, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported
+1) GDI 8bit only, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported
 
 **OS support:**
 
