@@ -32,12 +32,14 @@ Windows:
 
 DOS:
 
-  Timer settings: RTC or PIT, more precision - bigger perofrmance penalty
+1) Timer settings: RTC or PIT, more precision - bigger perofrmance penalty
+
+Windows 3.x/NT 3.x:
+
+No options available for now
 
 Windows 9x/NT 4.x:
 
-  Async timer for smoother controls, but can slow game down
-  
-  Async rendering for smoother FPS
-  
-  Switching both off essentially turns driver into Windows 3.x+Win32s/NT 3.x one
+1) Async timer for smoother controls, but can slow game down
+2) Async rendering for smoother FPS
+3) Switching both off essentially turns driver into Windows 3.x+Win32s/NT 3.x one
