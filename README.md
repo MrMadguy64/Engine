@@ -9,6 +9,10 @@ Engine can be used for free for personal non-commercial purpose only. Any purpos
 
 Programmers should be professionals, not just enthusiasts, who have to provide unrelated services in order to earn money. If one uses my work to earn money - then he should share part of his revenue with me. If you earn money via clogging nails, then why do you think hammer should be free for you? Buy it! I've put my effort into making tool for you to earn money. And it's like law of energy conservation. Every drop of sweat should pay off.
 
+**Warranty disclaimer:** 
+
+You use this software at your own risk. It's provided "as is" without any express or implied warranty of any kind, including warranties of merchantability or fitness for any particular purpose. Author isn't liable for any direct, indirect, incidental, special, exemplary, or consequential damage, caused by using this software.
+
 **Please note!** If you want to launch game's exe directly - then copy Data directory to exe's directory.
 
 **System requirements:**
