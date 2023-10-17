@@ -28,12 +28,15 @@ For now only GDI is supported.
 **Modes supported:**
 
 DOS:
-1) VGA 320x200x70x4E, VSync supported, Flip, Copy and Swap supported
-2) VGA 320x200x70x8, VSync supported, Copy and Swap supported
-3) VGA 320x200x70x8X, VSync supported, Flip, Copy and Swap suppoted
+1) VGA 320x200x70x4E, VSync is supported, NoDoubleBuffer, Flip, Copy and Swap are supported
+2) VGA 640x200x70x4E, VSync is supported, NoDoubleBuffer, Flip, Copy and Swap are supported
+3) VGA 640x350x70x4E, VSync is supported, NoDoubleBuffer, Flip and Copy are supported
+4) VGA 640x480x60x4E, VSync is supported, NoDoubleBuffer is supported
+5) VGA 320x200x70x8, VSync is supported, NoDoubleBuffer, Copy and Swap are supported
+6) VGA 320x200x70x8X, VSync is supported, NoDoubleBuffer, Flip, Copy and Swap are suppoted
 
 Windows:
-1) GDI 8bit only, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported
+1) GDI 8bit only, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
 
 **OS support:**
 
