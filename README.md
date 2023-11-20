@@ -26,6 +26,7 @@ DOS: Same as for HX, i386, DOS 5.0.
 For now only VGA is supported. If you don't have extended memory - use SET DPMILDR=2 environment varaible.
 
 
+
 Windows: Any Win32, including Windows 3.x + Win32s installed and Windows NT 3.x, Windows 9x/NT 4.x are recommended.
 
 For now only GDI is supported.
