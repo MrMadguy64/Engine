@@ -40,7 +40,8 @@ DOS:
 6) VGA 320x200x70x8X, VSync is supported, NoDoubleBuffer, Flip, Copy and Swap are suppoted
 
 Windows:
-1) GDI 8bit only, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
+1) GDI 4bpp, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
+2) GDI 8bpp, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
 
 **OS support:**
 
