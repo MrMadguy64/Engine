@@ -40,14 +40,15 @@ DOS:
 6) VGA 320x200x70x8X, VSync is supported, NoDoubleBuffer, Flip, Copy and Swap are suppoted
 
 Windows:
-1) GDI 1bpp, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
-2) GDI 2bpp, emulated, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
-3) GDI 4bpp, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
-4) GDI 8bpp, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
-5) GDI 15bpp, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
-6) GDI 16bpp, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
-7) GDI 24bpp, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
-8) GDI 32bpp, VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
+1) GDI 1bpp
+2) GDI 2bpp, emulated
+3) GDI 4bpp
+4) GDI 8bpp
+5) GDI 15bpp
+6) GDI 16bpp
+7) GDI 24bpp
+8) GDI 32bpp
+For all modes: VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
 
 **Please note!** Format support depends on specific driver implementation and currently selected video mode. You'll get blank screen, if format is unsupported, garbled colors or distorted image, if it's supported partially. Testing has shown, that some drivers can even support undocumented formats. They aren't implemented in GDI driver now. I'm not sure, if they should be implemented. And if yes - then how they should be implemented, because they're purely GDI specific.
 
