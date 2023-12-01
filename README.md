@@ -5,7 +5,7 @@ Project aims at providing portable library to write universal DOS/Windows applic
 
 **License:**
 
-Engine can be used for free for personal non-commercial purpose only. Any purpose, that involves explicit or implicit revenue, including indirect one (in case of budget or government organizations, educational purposes, etc.) - is allowed only after buying commercial license.
+Software can be used for free for personal non-commercial purpose only. Any purpose, that involves explicit or implicit revenue, including indirect one (in case of budget or government organizations, educational purposes, etc.) - is allowed only after buying commercial license.
 
 Any form of reverse-engineering is forbidden, including but not limited to debugging, decompiling, disassembling.
 
