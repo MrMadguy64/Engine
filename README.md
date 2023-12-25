@@ -34,11 +34,12 @@ For now only GDI is supported.
 DOS:
 1) VGA 320x200x60x2C, VSync is supported, NoDoubleBuffer, Copy and Swap are supported
 2) VGA 320x200x70x4E, VSync is supported, NoDoubleBuffer, Flip, Copy and Swap are supported
-3) VGA 640x200x70x4E, VSync is supported, NoDoubleBuffer, Flip, Copy and Swap are supported
-4) VGA 640x350x70x4E, VSync is supported, NoDoubleBuffer, Flip and Copy are supported
-5) VGA 640x480x60x4E, VSync is supported, NoDoubleBuffer is supported
-6) VGA 320x200x70x8, VSync is supported, NoDoubleBuffer, Copy and Swap are supported
-7) VGA 320x200x70x8X, VSync is supported, NoDoubleBuffer, Flip, Copy and Swap are suppoted
+3) VGA 640x200x60x1C, VSync is supported, NoDoubleBuffer, Copy and Swap are supported
+4) VGA 640x200x70x4E, VSync is supported, NoDoubleBuffer, Flip, Copy and Swap are supported
+5) VGA 640x350x70x4E, VSync is supported, NoDoubleBuffer, Flip and Copy are supported
+6) VGA 640x480x60x4E, VSync is supported, NoDoubleBuffer is supported
+7) VGA 320x200x70x8, VSync is supported, NoDoubleBuffer, Copy and Swap are supported
+8) VGA 320x200x70x8X, VSync is supported, NoDoubleBuffer, Flip, Copy and Swap are suppoted
 
 Windows:
 1) GDI 1bpp
