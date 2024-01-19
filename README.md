@@ -32,26 +32,33 @@ For now only GDI is supported.
 **Modes supported:**
 
 DOS:
-1) VGA 320x200x60x2C
-2) VGA 320x200x70x4E, Flip and TripleBufferFlip are supported
-3) VGA 640x200x60x1C
-4) VGA 640x200x70x4E, Flip and TripleBufferFlip are supported
-5) VGA 640x350x70x4E, Flip is supported
-6) VGA 640x480x60x4E
-7) VGA 320x200x70x8
-8) VGA 320x200x70x8X, Flip and TripleBufferFlip are supported
+
+**HGC.drv** 
+1) 720x348x50x1H, Flip is supported
+
+**VGA.drv**
+1) 320x200x60x2C
+2) 320x200x70x4E, Flip and TripleBufferFlip are supported
+3) 640x200x60x1C
+4) 640x200x70x4E, Flip and TripleBufferFlip are supported
+5) 640x350x70x4E, Flip is supported
+6) 640x480x60x4E
+7) 320x200x70x8
+8) 320x200x70x8X, Flip and TripleBufferFlip are supported
 
 For all modes: VSync is supported, Copy, Swap and TripleBufferSwap are supported
 
 Windows:
-1) GDI 1bpp
-2) GDI 2bpp, emulated
-3) GDI 4bpp
-4) GDI 8bpp
-5) GDI 15bpp
-6) GDI 16bpp
-7) GDI 24bpp
-8) GDI 32bpp
+
+**GDI.drv**
+1) 1bpp
+2) 2bpp, emulated
+3) 4bpp
+4) 8bpp
+5) 15bpp
+6) 16bpp
+7) 24bpp
+8) 32bpp
 
 For all modes: VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
 
