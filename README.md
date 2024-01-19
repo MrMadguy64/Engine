@@ -86,3 +86,7 @@ Windows 9x/NT 4.x:
 2) Async rendering for smoother FPS
 3) Switching both off essentially turns driver into Windows 3.x+Win32s/NT 3.x one
 4) Priorities allow better tuning for single-core CPU scenario
+
+All systems:
+
+1) Video driver setting
