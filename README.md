@@ -31,12 +31,12 @@ For now only GDI is supported.
 
 **Modes supported:**
 
-DOS:
+**DOS:**
 
-**HGC.drv** 
+HGC.drv
 1) 720x348x50x1H, Flip is supported
 
-**VGA.drv**
+VGA.drv
 1) 320x200x60x2C
 2) 320x200x70x4E, Flip and TripleBufferFlip are supported
 3) 640x200x60x1C
@@ -48,9 +48,9 @@ DOS:
 
 For all modes: VSync is supported, Copy, Swap and TripleBufferSwap are supported
 
-Windows:
+**Windows:**
 
-**GDI.drv**
+GDI.drv
 1) 1bpp
 2) 2bpp, emulated
 3) 4bpp
