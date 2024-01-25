@@ -76,6 +76,7 @@ Global settings:
 DOS:
 
 1) Timer settings: RTC or PIT, more precision - bigger perofrmance penalty
+2) Mouse settings: use normal mouse handling or alternative
 
 Windows 3.x/NT 3.x:
 
