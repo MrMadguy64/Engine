@@ -3,6 +3,10 @@ Universal DOS/Windows game engine.
 
 Project aims at providing portable library to write universal DOS/Windows applications, including games. So it's similar to SDL or Allegro. But! The biggest difference - you don't even need to recompile your code to run it on other platform! Binaries themselves are portable! What it means? If your code works on Windows - it will also work on DOS. It's great feature for debugging. You can debug your code via using modern comfortable Windows tools, not obsoleted DOS ones. All extremely hard zero-debugging code writing is already done for you by me. Great? Yeah!
 
+**Demos:**
+[Engine Tetris Demo](https://github.com/MrMadguy64/EngineTetrisDemo)
+[Engine BmpView Demo](https://github.com/MrMadguy64/EngineBmpViewDemo)
+
 **License:**
 
 Software can be used for free for personal non-commercial purpose only. Any purpose, that involves explicit or implicit revenue, including indirect one (in case of budget or government organizations, educational purposes, etc.) - is allowed only after buying commercial license.
