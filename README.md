@@ -5,9 +5,9 @@ Project aims at providing portable library to write universal DOS/Windows applic
 
 **Demos:**
 
-[Engine Tetris Demo](https://github.com/MrMadguy64/EngineTetrisDemo)
+[Game Engine Tetris Demo](https://github.com/MrMadguy64/EngineTetrisDemo)
 
-[Engine BmpView Demo](https://github.com/MrMadguy64/EngineBmpViewDemo)
+[Game Engine BmpView Demo](https://github.com/MrMadguy64/EngineBmpViewDemo)
 
 **License:**
 
