@@ -29,11 +29,17 @@ You use this software at your own risk. It's provided "as is" without any expres
 
 DOS: Same as for HX, i386, DOS 5.0.
 
-For now only VGA is supported. If you don't have extended memory - use SET DPMILDR=2 environment varaible.
+If you don't have extended memory - use SET DPMILDR=2 environment varaible.
 
 Windows: Any Win32, including Windows 3.x + Win32s installed and Windows NT 3.x, Windows 9x/NT 4.x are recommended.
 
 For now only GDI is supported.
+
+**Warning!** Since SP4 WinNT 3.51 has bug: some sort of race condition while initializing Kernel32.dll. Game.exe crashes with error 0xc000142 in Kernel32.dll.
+
+Possible workarounds:
+1) Don't use Launcher.exe. Copy Data directory to Bin32 and launch Game.exe directly.
+2) Try to change command line length via adding arbitrary string to it's end.
 
 **Modes supported:**
 
