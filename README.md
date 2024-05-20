@@ -57,7 +57,7 @@ VGA.drv
 6) 8, Dynamic, 160x35..360x480, if enough video memory
 7) 8X, Dynamic, 160x35..360x480
 
-**Please note!**: Dynamic - mode, for which mode info is calculated on fly. If mode is standard - it's unmodified and marked as standard. All modes support VSync, but Flip and TripleBufferFlip support can be specific to every mode. If there are duplicate modes, like 320x200x70x8 and 320x200x70x8X - first one always has priority. Second one is picked only if first one is filtered out by some other parameters. Only "fullsceen" modes are supported. While any mode down to 8x1 is possible, if mode timings don't match standard one - only part of screen is occupied, that is pointless feature. Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..10 (up to 32 is supported, but it's pointless).
+**Please note!**: Dynamic - mode, for which mode info is calculated on fly. If mode is standard - it's unmodified and marked as standard. All modes support VSync, but Flip and TripleBufferFlip support can be specific to every mode. If there are duplicate modes, like 320x200x70x8 and 320x200x70x8X - first one always has priority. Second one is picked only if first one is filtered out by some other parameters. Only "fullsceen" modes are supported. While any mode down to 8x1 is possible, if mode timings don't match standard one - only part of screen is occupied, that is pointless feature. Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..10 (up to 32 is supported, but it's pointless). Values are rounded down to closest integers.
 
 **Windows:**
 
