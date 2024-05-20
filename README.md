@@ -49,15 +49,15 @@ HGC.drv
 1) 720x348x50x1H, Flip is supported
 
 VGA.drv
-1) 1, Dynamic, 160x35..720x480
+1) 1, Dynamic, 160x22..720x480
 2) 640x200x70x1C
 3) 320x200x70x2C
-4) 4E, Dynamic, 160x35..720x480
-5) 4C, Dynamic, 80x35..180x480, if enough video memory
-6) 8, Dynamic, 160x35..360x480, if enough video memory
-7) 8X, Dynamic, 160x35..360x480
+4) 4E, Dynamic, 160x22..720x480
+5) 4C, Dynamic, 80x22..180x480, if enough video memory
+6) 8, Dynamic, 160x22..360x480, if enough video memory
+7) 8X, Dynamic, 160x22..360x480
 
-**Please note!**: Dynamic - mode, for which mode info is calculated on fly. If mode matches standard one - it's unmodified and marked as Standard. All modes support VSync, but Flip and TripleBufferFlip support can be specific to every mode. If there are duplicate modes, like 320x200x70x8 and 320x200x70x8X, that both can be picked via demanding unmodified 8bpp format - first one always has priority. Second one is picked only if first one is filtered out by some other parameters. So 1bpp CGA mode can only be choosen via specifying 1C format explicity. Only "fullsceen" modes are supported. While any mode down to 8x1 is actually possible, if mode timings don't match standard ones - only part of screen is occupied, that is pointless feature. Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..10 (up to 32 can be supported, but it's pointless). Values are rounded down to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
+**Please note!**: Dynamic - mode, for which mode info is calculated on fly. If mode matches standard one - it's unmodified and marked as Standard. All modes support VSync, but Flip and TripleBufferFlip support can be specific to every mode. If there are duplicate modes, like 320x200x70x8 and 320x200x70x8X, that both can be picked via demanding unmodified 8bpp format - first one always has priority. Second one is picked only if first one is filtered out by some other parameters. So 1bpp CGA mode can only be choosen via specifying 1C format explicity. Only "fullsceen" modes are supported. While any mode down to 8x1 is actually possible, if mode timings don't match standard ones - only part of screen is occupied, that is pointless feature. Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..16 (up to 32 can be supported, but it's pointless, plus VGA font has 16 pixels height). Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
 **Windows:**
 
