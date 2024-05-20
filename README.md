@@ -49,19 +49,15 @@ HGC.drv
 1) 720x348x50x1H, Flip is supported
 
 VGA.drv
-1) 160x100x70x4C, Flip is supported
-2) 320x200x60x2C
-3) 320x200x70x4E, Flip and TripleBufferFlip are supported
-4) 640x200x60x1C
-5) 640x200x70x4E, Flip and TripleBufferFlip are supported
-6) 640x350x70x1, Flip is supported
-7) 640x350x70x4E, Flip is supported
-8) 640x480x60x1
-9) 640x480x60x4E
-10) 320x200x70x8
-11) 320x200x70x8X, Flip and TripleBufferFlip are supported
+1) 1, Dynamic, 160x35..720x480
+2) 640x200x60x1C
+3) 320x200x60x2C
+4) 4E, Dynamic, 160x35..720x480
+5) 4C, Dynamic, 80x35..180x480, if enough video memory
+6) 8, Dynamic, 160x35..360x480, if enough video memory
+7) 8X, Dynamic, 160x35..360x480
 
-For all modes: VSync is supported, Copy, Swap and TripleBufferSwap are supported
+**Please note!**: Dynamic - mode, for which mode info is calculated on fly. If mode is standard - it's unmodified and marked as standard. All modes support VSync, but Flip and TripleBufferFlip support can be specific to every mode. If there are duplicate modes, like 320x200x70x8 and 320x200x70x8X - first one always has priority. Second one is picked only if first one is filtered out by some other parameters. Only "fullsceen" modes are supported. While any mode down to 8x1 is possible, if mode timings don't match standard one - only part of screen is occupied, that is pointless feature. Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..10 (up to 32 is supported, but it's pointless).
 
 **Windows:**
 
