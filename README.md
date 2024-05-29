@@ -45,8 +45,19 @@ Possible workarounds:
 
 **DOS:**
 
+For all modes: VSync, NoDoubleBuffer, Copy, Swap and TripleBufferSwap are supported
+
 HGC.drv
 1) 720x348x50x1H, Flip is supported
+
+EGA.drv
+
+1) 640x200x60x1C
+2) 640x350x60x1, Flip is supported
+3) 320x200x60x2C
+4) 320x200x60x4E, Flip and TripleBufferFlip are supported
+5) 640x200x60x4E, Flip and TripleBufferFlip are supported
+6) 640x350x60x4E, Flip is supported
 
 VGA.drv
 1) 1, Dynamic, 160x22..720x480
@@ -61,6 +72,8 @@ VGA.drv
 
 **Windows:**
 
+For all modes: VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
+
 GDI.drv
 1) 1bpp
 2) 2bpp, emulated
@@ -70,8 +83,6 @@ GDI.drv
 6) 16bpp
 7) 24bpp
 8) 32bpp
-
-For all modes: VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
 
 **Please note!** Format support depends on specific driver implementation and currently selected video mode. You'll get blank screen, if format is unsupported, garbled colors or distorted image, if it's supported partially. Testing has shown, that some drivers can even support undocumented formats. They aren't implemented in GDI driver now. I'm not sure, if they should be implemented. And if yes - then how they should be implemented, because they're purely GDI specific.
 
