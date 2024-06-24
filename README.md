@@ -79,13 +79,14 @@ For all modes: VSync controls if WM_PAINT or direct rendering is performed, Copy
 
 GDI.drv
 1) 1bpp
-2) 2bpp, emulated
-3) 4bpp
-4) 8bpp
-5) 15bpp
-6) 16bpp
-7) 24bpp
-8) 32bpp
+2) Mono, emulated
+3) 2bpp, emulated
+4) 4bpp
+5) 8bpp
+6) 15bpp
+7) 16bpp
+8) 24bpp
+9) 32bpp
 
 **Please note!** Format support depends on specific driver implementation and currently selected video mode. You'll get blank screen, if format is unsupported, garbled colors or distorted image, if it's supported partially. Testing has shown, that some drivers can even support undocumented formats. They aren't implemented in GDI driver now. I'm not sure, if they should be implemented. And if yes - then how they should be implemented, because they're purely GDI specific.
 
