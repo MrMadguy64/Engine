@@ -49,6 +49,8 @@ For all modes: VSync, NoDoubleBuffer, Copy, Swap and TripleBufferSwap are suppor
 
 **Please note!**: Dynamic - mode, for which mode info is calculated on fly. If mode matches standard one - it's unmodified and marked as Standard. All modes support VSync, but Flip and TripleBufferFlip support can be specific to every mode. If there are duplicate modes, like 320x200x70x8 and 320x200x70x8X, that both can be picked via demanding unmodified 8bpp format - first one always has priority. Second one is picked only if first one is filtered out by some other parameters. So 1bpp CGA mode can only be choosen via specifying 1C format explicity. Only "fullsceen" modes are supported. While any mode down to 8x1 is actually possible, if mode timings don't match standard ones - only part of screen is occupied, that is pointless feature.
 
+**Dual display support:** Engine can't render to both adapters at the same time now. But dual display setup is supported to some degree. Adapter is detected, no matter if it's active or not. But it most likely wouldn't operate properly, if it wouldn't be made active. Enigne itself doesn't do it now. So for now it's recommended to make adapter active manually before starting any application, that uses Engine.
+
 MDA.drv
 1) 160x25x50x1M
 2) 160x25x50xMM
@@ -59,6 +61,12 @@ HGC.drv
 1) 160x25x50x1M
 2) 160x25x50xMM
 3) 720x348x50x1H, Flip is supported
+
+CGA.drv
+1) 640x200x60x1C
+2) 320x200x60x1C
+3) 80x25x60x4T
+4) 160x25x60x4T
 
 EGA.drv
 1) 1, Dynamic, 320x200..640x350
