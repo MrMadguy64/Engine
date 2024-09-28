@@ -45,7 +45,7 @@ Possible workarounds:
 
 **DOS:**
 
-For all modes: VSync, NoDoubleBuffer, Copy, Swap and TripleBufferSwap are supported, if opposite isn't stated explicitly.
+For all modes: VSync, NoDoubleBuffer, Copy, Swap, TripleBufferSwap, SMCopy, SMSwap and SMTripleBufferSwap are supported, if opposite isn't stated explicitly.
 
 **Please note!**: Dynamic - mode, for which mode info is calculated on fly. If mode matches standard one - it's unmodified and marked as Standard. All modes support VSync, but Flip and TripleBufferFlip support can be specific to every mode. If there are duplicate modes, like 320x200x70x8 and 320x200x70x8X, that both can be picked via demanding unmodified 8bpp format - first one always has priority. Second one is picked only if first one is filtered out by some other parameters. So 1bpp CGA mode can only be choosen via specifying 1C format explicity. Only "fullsceen" modes are supported. While any mode down to 8x1 is actually possible, if mode timings don't match standard ones - only part of screen is occupied, that is pointless feature.
 
