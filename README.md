@@ -65,8 +65,9 @@ HGC.drv
 CGA.drv
 1) 640x200x60x1C
 2) 320x200x60x1C
-3) 80x25x60x4T
-4) 160x25x60x4T
+3) 4T, Dynamic, 80x25..160x100
+
+Horizontal resolutions 320 and 640 are supported with divisor 4. Vertial resolution 200 is supported with divisors 2, 4, 8.
 
 EGA.drv
 1) 1, Dynamic, 320x200..640x350
