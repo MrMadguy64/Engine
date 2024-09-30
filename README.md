@@ -67,7 +67,7 @@ CGA.drv
 2) 320x200x60x1C
 3) 4T, Dynamic, 80x25..160x100
 
-Horizontal resolutions 320 and 640 are supported with divisor 4. Vertial resolution 200 is supported with divisors 2, 4, 8.
+Horizontal resolutions 320 and 640 are supported with divisor 4. Vertial resolution 200 is supported with divisors 2..8. Please note: only 2, 4 and 8 are Standard - others require Compatiblity to be set to Experimental!
 
 EGA.drv
 1) 1, Dynamic, 320x200..640x350
