@@ -97,6 +97,10 @@ VGA.drv
 11) 4T, Dynamic, 80x22..180x480, if enough video memory
 12) 8, Dynamic, 160x22..360x480, if enough video memory
 13) 8X, Dynamic, 160x22..360x480
+14) 8D, Dynamic, 160x22..360x480, if enough video memory
+15) 8R, Dynamic, 160x22..360x480, if enough video memory
+16) 8XD, Dynamic, 160x22..360x480
+17) 8XR, Dynamic, 160x22..360x480    
 
 Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..16 (up to 32 can be supported, but it's pointless, plus VGA font has 16 pixels height). Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
