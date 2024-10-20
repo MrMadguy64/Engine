@@ -105,7 +105,8 @@ VGA.drv
 Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..16 (up to 32 can be supported, but it's pointless, plus VGA font has 16 pixels height). Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
 SVGA1.drv
-All modes are dynamic. For now only VBE 1.2 and only 15, 16, 24 and 32bit RGB modes are supported.
+
+All modes are dynamic. For now only VBE 1.2 and only 15bpp, 16bpp, 24bpp and 32bpp RGB modes are supported.
 
 **Windows:**
 
