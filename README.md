@@ -23,7 +23,7 @@ Programmers should be professionals, not just enthusiasts, who have to provide u
 
 You use this software at your own risk. It's provided "as is" without any express or implied warranty of any kind, including warranties of merchantability or fitness for any particular purpose. Author isn't liable for any direct, indirect, incidental, special, exemplary, or consequential damage, caused by using this software.
 
-**Please note!** If you want to launch game's exe directly - then copy Data directory to exe's directory.
+**Please note!** If you want to launch game's exe directly - then copy Data directory to exe's directory. Please remember, that Game.exe doesn't contain HX stub! You should install HXLDR32.EXE as TSR before trying to run Game.exe.
 
 **System requirements:**
 
@@ -103,6 +103,9 @@ VGA.drv
 17) 8XR, Dynamic, 160x22..360x480    
 
 Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..16 (up to 32 can be supported, but it's pointless, plus VGA font has 16 pixels height). Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
+
+SVGA1.drv
+All modes are dynamic. For now only VBE 1.2 and only 15, 16, 24 and 32bit RGB modes are supported.
 
 **Windows:**
 
