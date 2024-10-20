@@ -108,6 +108,8 @@ SVGA1.drv
 
 All modes are dynamic. For now only VBE 1.2 and only 15bpp, 16bpp, 24bpp and 32bpp RGB modes are supported.
 
+**Please note!** VBE 1.x implies VGA-compatible video card, as it doesn't provide way to detect VGA-incompatibility. Following features require some degree of VGA compatibility: VSync, some VGA modes, text modes, 4bpp plane modes, 8bpp modes, unchained 8bpp modes. In the worst case scenario only >15bpp direct color modes with VSync disabled may be available. 
+
 **Windows:**
 
 For all modes: VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
