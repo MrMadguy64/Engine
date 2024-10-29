@@ -106,7 +106,11 @@ Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. V
 
 SVGA1.drv
 
-All modes are dynamic. For now only VBE 1.2 and only color graphic 8bpp, 15bpp, 16bpp, 24bpp and 32bpp RGB modes are supported.
+All modes are dynamic, i.e. support and parameters of any specific mode is reported by BIOS. For now only color graphic 8bpp, 15bpp, 16bpp, 24bpp and 32bpp RGB/BGR modes are supported.
+If no direct color info is provided by BIOS, following Config.cfg options can be useful:
+1) Force15bpp: Non-standard modes only. Some old BIOSes may support 15bpp modes only, but report them as 16bpp. For example VBE 1.2 standard states, that VBE 1.0-1.1 BIOSes do it. Set this option to Enabled in this case.
+2) Force32bpp: Standard modes only. Standard VESA modes should be 24bpp, as stated in VBE standard. But some old video cards may support 32bpp instead. Set this option to Enabled in this case. As scanline lenght is most like different for 24bpp and 32bpp modes, Guess option can be used to try to guess supported format.
+3) ForceBGR: Both standard and non-standard modes. Even rarer case. Not sure, if such video cards exist. Video card supports BGR formats only. Set this option to Enabled in this case.
 
 **Please note!** VBE 1.x implies VGA-compatible video card, as it doesn't provide way to detect VGA-incompatibility. Following features require some degree of VGA compatibility: VSync, some VGA modes, text modes, 4bpp plane modes, 8bpp modes, unchained 8bpp modes. In the worst case scenario only >=15bpp direct color modes with VSync disabled may be available. 
 
