@@ -106,7 +106,11 @@ Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. V
 
 SVGA1.drv
 
-All modes are dynamic, i.e. support and parameters of any specific mode is reported by BIOS. For now only color graphic 1bpp, 2bpp, 8bpp, 8bpp direct color, 15bpp, 16bpp, 24bpp and 32bpp RGB/BGR modes are supported.
+All modes are dynamic, i.e. support and parameters of any specific mode is reported by BIOS.
+
+Graphic modes supported: 1bpp, 2bpp, 8bpp, 8bpp direct color, 15bpp, 16bpp, 24bpp and 32bpp RGB/BGR modes are supported.
+
+Text modes supported: 1bppM, MbppM, 1bppT, MbppT, 2bppT, 4bppT.
 
 If no direct color info is provided by BIOS, following Config.cfg options can be useful:
 1) Force15bpp: Non-standard modes only. Some old BIOSes may support 15bpp modes only, but report them as 16bpp. For example VBE 1.2 standard states, that VBE 1.0-1.1 BIOSes do it. Set this option to Enabled in this case.
@@ -114,6 +118,11 @@ If no direct color info is provided by BIOS, following Config.cfg options can be
 3) ForceBGR: Both standard and non-standard modes. Even rarer case. Not sure, if such video cards exist. Video card supports BGR formats instead of RGB. Set this option to Enabled in this case.
 
 **Please note!** VBE 1.x implies VGA-compatible video card, as it doesn't provide way to detect VGA-incompatibility. Following features require some degree of VGA compatibility: VSync, some VGA modes, text modes, 4bpp plane modes, 8bpp modes, unchained 8bpp modes. In the worst case scenario only >=15bpp direct color modes with VSync disabled may be available. 
+
+Compatibility Config.cfg options:
+1) DisableVGAIO: disable features, that require direct access to VGA port - VSync
+2) DisableVGABIOS: disable features, that require VGA BIOS calls - set palette, set blink in text modes
+3) DisableVGATTY: disable features, that require VGA TTY calls - hide cursor in text modes
 
 **Windows:**
 
