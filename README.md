@@ -108,7 +108,7 @@ SVGA1.drv
 
 All modes are dynamic, i.e. support and parameters of any specific mode is reported by BIOS.
 
-Graphic modes supported: 1bpp, 2bpp, 4bpp, 8bpp, 8bpp direct color, 15bpp, 16bpp, 24bpp and 32bpp RGB/BGR modes are supported.
+Graphic modes supported: 1bpp, 2bpp, 4bpp, 4bppE, 8bpp, 8bpp direct color, 8bppX, 8bppX direct color, 15bpp, 16bpp, 24bpp and 32bpp RGB/BGR modes are supported.
 
 Text modes supported: 1bppM, MbppM, 1bppT, MbppT, 2bppT, 4bppT.
 
