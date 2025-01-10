@@ -130,7 +130,7 @@ Graphic modes supported: 1bpp, 2bpp, 4bpp, 4bppV, 4bppE, 8bpp, 8bpp direct color
 
 Text modes supported: 1bppM, MbppM, 1bppT, MbppT, 2bppT, 4bppT.
 
-Buffering has effect in 4bppV and 4bppE modes only. Buffered variants require Window B to be available. Some performance optimizations are possible, but they aren't implemented yet. Therefore some video modes are slower, than they could be.
+Flip requires VBE 1.1. Buffering has effect in 4bppV and 4bppE modes only. Fastest buffering can be used if SwapEffect is flip. Buffered variants require Window B to be available. Some performance optimizations are possible, but they aren't implemented yet. Therefore some video modes are slower, than they could be.
 
 If no direct color info is provided by BIOS, following Config.cfg options can be useful:
 1) Force15bpp: Non-standard modes only. Some old BIOSes may support 15bpp modes only, but report them as 16bpp. For example VBE 1.2 standard states, that VBE 1.0-1.1 BIOSes do it. Set this option to Enabled in this case.
