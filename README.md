@@ -41,6 +41,24 @@ Possible workarounds:
 1) Don't use Launcher.exe. Copy Data directory to Bin32 and launch Game.exe directly.
 2) Try to change command line length via adding arbitrary string to it's end.
 
+**Global options:**
+
+Mode filtering:
+
+First matching mode is picked. Mode conflicts can possibly happen, when modes are listed by external routines (like in case of SVGA). But video driver should have extra options to solve such conflics.
+
+1) Width, pixels, 0 - unspecified, any value match
+2) Height, pixels, 0 - unspecified, any value match
+3) Frequency, Hz, 0 - unspecified, any value match
+4) Pixel format, exact value matched first, then alternative value, that matches bit count only. Alternative values make life easier. They allow picking video-card specific modes like 4bppV or 4bppE via simply specifying 4bpp. Please note. While some drivers allow some sort of "better modes lised first" priority, others don't, like SVGA one for example.
+5) Compatibility. Safety measure, that filters out modes, that can be potentially dangerous to use. Set higher values at your own risk! Set lower values, if you have problems.
+
+Mode options:
+
+7) VSync, exact value, fails if unsupported
+8) SwapEffect, exact value, fails if unsupported. Flip must be supported by hardware. In all other cases support depends on amount of video and system memory availiable. Falls back to SM variants, if not enough video memory available. There are just two possible cases from game's point of view: copy and flip. Game's rendering behavior is different depending on which one is chosen. It recommended to support both.
+9) Buffering, falls back to corresponding lower value, if unsupported. Used in modes, where direct rendering to video buffer can cause glitches or can even be unsupported. Overall logic - higer value = better quality, but slower rendering. As swap effect is transparent for video driver (i.e. swap effects aren't hardcoded), it can't determine, if some buffering mode is more effective than other. It's up to user to do it. Buffered variants are only available, if video card has enough video memory.
+
 **Modes supported:**
 
 **DOS:**
