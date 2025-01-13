@@ -143,7 +143,7 @@ Compatibility Config.cfg options:
 1) DisableVGAIO: disable features, that require direct access to VGA port - VSync
 2) DisableVGABIOS: disable features, that require VGA BIOS calls - set palette, set blink in text modes
 3) DisableVGATTY: disable features, that require VGA TTY calls - hide cursor in text modes
-4) PagesAvailable: BIOS can report a litte bit lesser amount of pages, than actually available, due to 64Kb page alignment, but overall it's safer to rely on BIOS in case of planar modes, because we can't be sure, how planar memory is implemented by specific video card. Hence, default option is the safest. You can change it to "Via total VRAM", if you want to have more pages. Change to "Reported by BIOS", if you experience problems. Number of pages available info is mandatory since VBE 1.2. Engine falls back to "Via total VRAM", if it's unavailable.
+4) PagesAvailable: BIOS can report a litte bit lesser amount of pages, than actually available, due to 64Kb page alignment. But overall it's safer to rely on BIOS in case of planar modes, because we can't be sure, how planar memory is implemented by specific video card. Hence, default option is the safest. You can change it to "Via total VRAM", if you want to have more pages in planar modes. Change to "Reported by BIOS", if you experience problems. Number of pages available info is mandatory since VBE 1.2. Engine falls back to "Via total VRAM", if it's unavailable.
 
 **Windows:**
 
