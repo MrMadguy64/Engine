@@ -122,6 +122,23 @@ VGA.drv
 
 Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..16 (up to 32 can be supported, but it's pointless, plus VGA font has 16 pixels height). Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
+SVGA
+
+Following options are common for all SVGA drivers:
+
+If no direct color info is provided by BIOS, following Config.cfg options can be useful:
+1) Force15bpp: Non-standard modes only. Some old BIOSes may support 15bpp modes only, but report them as 16bpp. For example VBE 1.2 standard states, that VBE 1.0-1.1 BIOSes do it. Set this option to Enabled in this case.
+2) Force32bpp: Standard modes only. Standard VESA modes should be 24bpp, as stated in VBE standard. But some old video cards may support 32bpp instead. Set this option to Enabled in this case. As scanline lenght is most like different for 24bpp and 32bpp modes, Guess option can be used to try to guess supported format.
+3) ForceBGR: Both standard and non-standard modes. Even rarer case. Not sure, if such video cards exist. Video card supports BGR formats instead of RGB. Set this option to Enabled in this case.
+
+Compatibility options:
+1) DisableVGAIO: disable features, that require direct access to VGA port - VSync
+2) DisableVGABIOS: disable features, that require VGA BIOS calls - set palette, set blink in text modes
+3) DisableVGATTY: disable features, that require VGA TTY calls - hide cursor in text modes
+4) PagesAvailable: 0 is default - it's the best option. Falls back to other values, if some information isn't available. Change it in case of problems - if BIOS provides faulty information about total video memory size, number of planes or number of pages.
+
+Flip requires VBE 1.1. Extended mode info is mandatory since VBE 1.2. Buffering has effect in planar modes only. Fastest buffering can be used if SwapEffect is flip. Buffered variants require Window B to be available. Some performance optimizations are possible, but they aren't implemented yet. Therefore some video modes are slower, than they could be.
+
 SVGA1.drv
 
 All modes are dynamic, i.e. support and parameters of any specific mode is reported by BIOS.
@@ -130,20 +147,21 @@ Graphic modes supported: 1bpp, 2bpp, 4bpp, 4bppV, 4bppE, 8bpp, 8bpp direct color
 
 Text modes supported: 1bppM, MbppM, 1bppT, MbppT, 2bppT, 4bppT.
 
-Flip requires VBE 1.1. Buffering has effect in 4bppV and 4bppE modes only. Fastest buffering can be used if SwapEffect is flip. Buffered variants require Window B to be available. Some performance optimizations are possible, but they aren't implemented yet. Therefore some video modes are slower, than they could be.
-
-If no direct color info is provided by BIOS, following Config.cfg options can be useful:
-1) Force15bpp: Non-standard modes only. Some old BIOSes may support 15bpp modes only, but report them as 16bpp. For example VBE 1.2 standard states, that VBE 1.0-1.1 BIOSes do it. Set this option to Enabled in this case.
-2) Force32bpp: Standard modes only. Standard VESA modes should be 24bpp, as stated in VBE standard. But some old video cards may support 32bpp instead. Set this option to Enabled in this case. As scanline lenght is most like different for 24bpp and 32bpp modes, Guess option can be used to try to guess supported format.
-3) ForceBGR: Both standard and non-standard modes. Even rarer case. Not sure, if such video cards exist. Video card supports BGR formats instead of RGB. Set this option to Enabled in this case.
-
 **Please note!** VBE 1.x implies VGA-compatible video card, as it doesn't provide way to detect VGA-incompatibility. Following features require some degree of VGA compatibility: VSync, some VGA modes, text modes, 4bpp plane modes, 8bpp modes, unchained 8bpp modes. In the worst case scenario only >=15bpp direct color modes with VSync disabled may be available. 
 
-Compatibility Config.cfg options:
-1) DisableVGAIO: disable features, that require direct access to VGA port - VSync
-2) DisableVGABIOS: disable features, that require VGA BIOS calls - set palette, set blink in text modes
-3) DisableVGATTY: disable features, that require VGA TTY calls - hide cursor in text modes
-4) PagesAvailable: "Via total VRAM and number of planes" - to calculate number of pages ourselves, but to rely on number of planes, reported by BIOS. "Reported by BIOS" - use explicit number of pages, reported by BIOS. BIOS can report a litte bit lesser amount of pages, than actually available, due to 64Kb page alignment, but this information is more reliable. Use in case of problems. "Via total VRAM" - last resort, use hardcoded number of planes. Used, if extended mode info isn't available. It's mandatory since VBE 1.2.
+SVGA2Bnk.drv
+
+All modes are dynamic, i.e. support and parameters of any specific mode is reported by BIOS.
+
+Graphic modes supported: 1bpp, 2bpp, 4bpp, 4bppV, 4bppE, 8bpp, 8bpp direct color, 8bppX, 8bppX direct color, 15bpp, 16bpp, 24bpp and 32bpp RGB/BGR modes are supported.
+
+Text modes supported: 1bppM, MbppM, 1bppT, MbppT, 2bppT, 4bppT.
+
+Differences vs SVGA1.drv:
+1) Unnecessary code is removed
+2) Standard modes aren't supported (non-direct color ones are still supported though)
+3) Force32bpp is unsupported
+4) Palette control is supported - 8bpp modes aren't disabled by either DisableVGABIOS or VGA-incompatible card
 
 **Windows:**
 
