@@ -159,9 +159,10 @@ Text modes supported: 1bppM, MbppM, 1bppT, MbppT, 2bppT, 4bppT.
 
 Differences vs SVGA1.drv:
 1) Unnecessary code is removed
-2) Standard modes aren't supported (non-direct color ones are still supported though)
-3) Force32bpp is unsupported
-4) Palette control is supported - 8bpp modes aren't disabled by either DisableVGABIOS or VGA-incompatible card
+2) Extended mode info is always available
+3) Standard modes aren't supported (non-direct color ones are still supported though)
+4) Force32bpp is unsupported
+5) Palette control is supported - 8bpp modes aren't disabled by either DisableVGABIOS or VGA-incompatible card
 
 **Windows:**
 
