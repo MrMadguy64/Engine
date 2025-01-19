@@ -126,7 +126,7 @@ SVGA
 
 Following options are common for all SVGA drivers:
 
-If no direct color info is provided by BIOS, following Config.cfg options can be useful:
+If no direct color info is provided by BIOS, following options can be useful:
 1) Force15bpp: Non-standard modes only. Some old BIOSes may support 15bpp modes only, but report them as 16bpp. For example VBE 1.2 standard states, that VBE 1.0-1.1 BIOSes do it. Set this option to Enabled in this case.
 2) Force32bpp: Standard modes only. Standard VESA modes should be 24bpp, as stated in VBE standard. But some old video cards may support 32bpp instead. Set this option to Enabled in this case. As scanline lenght is most like different for 24bpp and 32bpp modes, Guess option can be used to try to guess supported format.
 3) ForceBGR: Both standard and non-standard modes. Even rarer case. Not sure, if such video cards exist. Video card supports BGR formats instead of RGB. Set this option to Enabled in this case.
