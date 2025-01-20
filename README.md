@@ -132,7 +132,7 @@ If no direct color info is provided by BIOS, following options can be useful:
 3) ForceBGR: Both standard and non-standard modes. Even rarer case. Not sure, if such video cards exist. Video card supports BGR formats instead of RGB. Set this option to Enabled in this case.
 
 Compatibility options:
-1) DisableVGAIO: disable features, that require direct access to VGA port - VSync
+1) DisableVGAIO: disable features, that require direct access to VGA IO ports - planar modes, VSync
 2) DisableVGABIOS: disable features, that require VGA BIOS calls - set palette, set blink in text modes
 3) DisableVGATTY: disable features, that require VGA TTY calls - hide cursor in text modes
 4) PagesAvailable: 0 is default - it's the best option. Falls back to other values, if some information isn't available. Change it in case of problems - if BIOS provides faulty information about total video memory size, number of planes or number of pages.
