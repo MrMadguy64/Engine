@@ -162,7 +162,8 @@ Differences vs SVGA1.drv:
 2) Extended mode info is always available
 3) Standard modes aren't supported (non-direct color ones are still supported though)
 4) Force32bpp is unsupported
-5) Palette control is supported - 8bpp modes aren't disabled by either DisableVGABIOS or VGA-incompatible card
+5) Palette control is supported - 8bpp modes aren't disabled by DisableVGABIOS
+6) VGA-incompatible cards are supported. It's related to IO ports and standard memory addresses only. BIOS calls shouldn't be affected. Use DisableVGABIOS in case of problems. But, as I understand, banked modes can't even be VGA-incompatible. But we can never be 100% sure.
 
 **Windows:**
 
