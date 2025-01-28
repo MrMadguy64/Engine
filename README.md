@@ -132,11 +132,10 @@ If no direct color info is provided by BIOS, following options can be useful:
 3) ForceBGR: Both standard and non-standard modes. Even rarer case. Not sure, if such video cards exist. Video card supports BGR formats instead of RGB. Set this option to Enabled in this case.
 
 Compatibility options:
-1) DisableVGAIO: disable features, that require direct access to VGA IO ports - planar modes, VSync
-2) DisableVGABIOS: disable features, that require VGA BIOS calls - set palette, set blink in text modes
-3) DisableVGATTY: disable features, that require VGA TTY calls - hide cursor in text modes
-4) DisableDirectBankSwitch: don't use bank switch procedure, provided by 4F01h - force BIOS calls
-5) DisableVBE20PM: disable 32bit protected mode interface, as it can be problematic
+1) DisableVGAIO: Disable features, that require direct access to VGA IO ports - planar modes, VSync.
+2) DisableVGABIOS: Disable features, that require VGA BIOS calls - set palette, set blink in text modes.
+3) DisableVGATTY: Disable features, that require VGA TTY calls - hide cursor in text modes.
+4) DisableDirectBankSwitch: Don't use bank switch procedure, provided by 4F01h - force BIOS calls.
 6) PagesAvailable: 0 is default - it's the best option. Falls back to other values, if some information isn't available. Change it in case of problems - if BIOS provides faulty information about total video memory size, number of planes or number of pages.
 
 Flip requires VBE 1.1. Extended mode info is mandatory since VBE 1.2. Buffering has effect in planar modes only. Fastest buffering can be used if SwapEffect is flip. Buffered variants require Window B to be available. Some performance optimizations are possible, but they aren't implemented yet. Therefore some video modes are slower, than they could be.
@@ -166,6 +165,10 @@ Differences vs SVGA1.drv:
 4) Force32bpp is unsupported
 5) Palette control is supported - 8bpp modes aren't disabled by DisableVGABIOS
 6) VGA-incompatible cards are supported. It's related to IO ports and standard memory addresses only. BIOS calls shouldn't be affected. Use DisableVGABIOS in case of problems. But, as I understand, planar and banked modes can't even be VGA-incompatible. But we can never be 100% sure. So, they're guarded now.
+
+Compatibility options:
+1) DisablePM32: Disable VBE 2.0 32bit protected mode interface, as it can be problematic (especially in case of page flipping). Fall back to BIOS calls or direct bank switching, if supported.
+2) DisableVSync: Disable VBE 2.0 VSync support, as it isn't guaranteed to work properly for all swap effectis (only for flipping). Fall back to VGAIO, if supported.
 
 **Windows:**
 
