@@ -150,7 +150,7 @@ Text modes supported: 1bppM, MbppM, 1bppT, MbppT, 2bppT, 4bppT.
 
 **Please note!** VBE 1.x implies VGA-compatible video card, as it doesn't provide way to detect VGA-incompatibility. Following features require some degree of VGA compatibility: VSync, some VGA modes, text modes, 4bpp plane modes, 8bpp modes, unchained 8bpp modes. In the worst case scenario only >=15bpp direct color modes with VSync disabled may be available. 
 
-SVGA2Bnk.drv
+SVGA2Bnk.drv/SVGA2LFB.drv
 
 All modes are dynamic, i.e. support and parameters of any specific mode is reported by BIOS.
 
