@@ -106,21 +106,29 @@ VGA.drv
 2) 640x200x70x1C
 3) 1T, Dynamic, 80x22..180x480, if enough video memory
 4) M, Dynamic, 160x22..720x480
-5) MT, Dynamic, 80x22..180x480, if enough video memory
-6) 2E, Dynamic, 160x22..720x480
-7) 320x200x70x2C
-8) 2T, Dynamic, 80x22..180x480, if enough video memory
-9) 4V, Dynamic, 160x22..720x480
-10) 4E, Dynamic, 160x22..720x480
-11) 4T, Dynamic, 80x22..180x480, if enough video memory
-12) 8, Dynamic, 160x22..360x480, if enough video memory
-13) 8X, Dynamic, 160x22..360x480
-14) 8D, Dynamic, 160x22..360x480, if enough video memory
-15) 8R, Dynamic, 160x22..360x480, if enough video memory
-16) 8XD, Dynamic, 160x22..360x480
-17) 8XR, Dynamic, 160x22..360x480    
+5) MM, Dynamic, 80x22..180x480, if enough video memory
+6) MT, Dynamic, 80x22..180x480, if enough video memory
+7) 2E, Dynamic, 160x22..720x480
+8) 320x200x70x2C
+9) 2T, Dynamic, 80x22..180x480, if enough video memory
+10) 4V, Dynamic, 160x22..720x480
+11) 4E, Dynamic, 160x22..720x480
+12) 4T, Dynamic, 80x22..180x480, if enough video memory
+13) 8, Dynamic, 160x22..360x480, if enough video memory
+14) 8X, Dynamic, 160x22..360x480
+15) 8D, Dynamic, 160x22..360x480, if enough video memory
+16) 8R, Dynamic, 160x22..360x480, if enough video memory
+17) 8XD, Dynamic, 160x22..360x480
+18) 8XR, Dynamic, 160x22..360x480    
 
 Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..16 (up to 32 can be supported, but it's pointless, plus VGA font has 16 pixels height). Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
+
+Mono monitor support doesn't require any special actions - it's supported by BIOS internally.
+
+Mono modes are handled differently. There are 3 possible variants:
+1) Single - all modes listed above are supported, M modes are emulated due to collision between color and mono implementations.
+2) Dual color - M modes are emulated, MM modes are unsupported.
+3) Dual mono - only M and MM modes are supported.
 
 SVGA
 
