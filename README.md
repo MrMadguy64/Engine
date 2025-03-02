@@ -91,44 +91,48 @@ EGA.drv
 1) 1, Dynamic, 320x200..640x350
 2) 640x200x60x1C
 3) 1T, Dynamic, 80x25..160x350, if enough video memory
-4) M, Dynamic, 320x200..640x350
-5) MT, Dynamic, 80x25..160x350, if enough video memory
-6) 2E, Dynamic, 320x200..640x350
-7) 320x200x60x2C
-8) 2T, Dynamic, 80x25..160x350, if enough video memory
-9) 4E, Dynamic, 320x200..640x350
-10) 4T, Dynamic, 80x25..160x350, if enough video memory
+4) ME, Dynamic, 320x200..640x350 (EGA/CGA only)
+5) 640x350x60xME (MDA only)
+6) 640x350x60xMM (MDA only)
+7) MT, Dynamic, 80x25..160x350, if enough video memory
+8) 2E, Dynamic, 320x200..640x350
+9) 320x200x60x2C
+10) 2T, Dynamic, 80x25..160x350, if enough video memory
+11) 4E, Dynamic, 320x200..640x350
+12) 4T, Dynamic, 80x25..160x350, if enough video memory
 
-Horizontal resolutions 320 and 640 are supported with divisors 1, 2, 4. Vertical resoutions 200 and 350 are supported with divisors 1..14 for EGA/MDA and 1..8 for CGA (up to 32 can be supported, but it's pointless, plus EGA/CGA/MDA font has 14/8/14 pixels height). Values are rounded up to closest integers.
+Horizontal resolutions 320 and 640 are supported with divisors 1, 2, 4. Both 200 and 350 vertical resoutions with divisors 1..14 are supported for EGA, 200 with divisors 1..8 for CGA and only 350 for MDA (up to 32 can be supported, but it's pointless, plus EGA/CGA/MDA font has 14/8/14 pixels height). Values are rounded up to closest integers.
 
 VGA.drv
 1) 1, Dynamic, 160x22..720x480
 2) 640x200x70x1C
 3) 1T, Dynamic, 80x22..180x480, if enough video memory
-4) M, Dynamic, 160x22..720x480
-5) MM, Dynamic, 80x22..180x480, if enough video memory
-6) MT, Dynamic, 80x22..180x480, if enough video memory
-7) 2E, Dynamic, 160x22..720x480
-8) 320x200x70x2C
-9) 2T, Dynamic, 80x22..180x480, if enough video memory
-10) 4V, Dynamic, 160x22..720x480
-11) 4E, Dynamic, 160x22..720x480
-12) 4T, Dynamic, 80x22..180x480, if enough video memory
-13) 8, Dynamic, 160x22..360x480, if enough video memory
-14) 8X, Dynamic, 160x22..360x480
-15) 8D, Dynamic, 160x22..360x480, if enough video memory
-16) 8R, Dynamic, 160x22..360x480, if enough video memory
-17) 8XD, Dynamic, 160x22..360x480
-18) 8XR, Dynamic, 160x22..360x480    
+4) MV, Dynamic, 160x22..720x480
+5) ME, Dynamic, 160x22..720x480
+6) MM, Dynamic, 80x22..180x480, if enough video memory (Mono only)
+7) MT, Dynamic, 80x22..180x480, if enough video memory
+8) 2V, Dynamic, 160x22..720x480
+9) 2E, Dynamic, 160x22..720x480
+10) 320x200x70x2C
+11) 2T, Dynamic, 80x22..180x480, if enough video memory
+12) 4V, Dynamic, 160x22..720x480
+13) 4E, Dynamic, 160x22..720x480
+14) 4T, Dynamic, 80x22..180x480, if enough video memory
+15) 8, Dynamic, 160x22..360x480, if enough video memory
+16) 8X, Dynamic, 160x22..360x480
+17) 8D, Dynamic, 160x22..360x480, if enough video memory
+18) 8R, Dynamic, 160x22..360x480, if enough video memory
+19) 8XD, Dynamic, 160x22..360x480
+20) 8XR, Dynamic, 160x22..360x480    
 
 Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..16 (up to 32 can be supported, but it's pointless, plus VGA font has 16 pixels height). Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
 Mono monitor support doesn't require any special actions - it's supported by BIOS internally.
 
 Mono modes are handled differently. There are 3 possible variants:
-1) Single - all modes listed above are supported, M modes are emulated due to collision between color and mono implementations.
-2) Dual color - M modes are emulated, MM modes are unsupported.
-3) Dual mono - only M and MM modes are supported.
+1) Single - all modes listed above are supported, Mx modes are emulated due to collision between color and mono implementations.
+2) Dual color - Mx modes are emulated, MM modes are unsupported.
+3) Dual mono - only Mx and MM modes are supported.
 
 SVGA
 
