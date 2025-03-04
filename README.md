@@ -88,20 +88,22 @@ CGA.drv
 Horizontal resolutions 320 and 640 are supported with divisor 4. Vertial resolution 200 is supported with divisors 2..8. Values are rounded down to closest integers. Please note: only 2, 4 and 8 divisors use Standard timings - others require Compatiblity to be set to Experimental!
 
 EGA.drv
-1) 1, Dynamic, 320x200..640x350
+1) 1, Dynamic, 320x13..640x350
 2) 640x200x60x1C
 3) 1T, Dynamic, 80x25..160x350, if enough video memory
-4) ME, Dynamic, 320x200..640x350 (EGA/CGA only)
+4) ME, Dynamic, 320x13..640x350 (EGA/CGA only)
 5) 640x350x60xME (MDA only)
-6) 640x350x60xMM (MDA only)
+6) 160x25x60xMM (MDA only)
 7) MT, Dynamic, 80x25..160x350, if enough video memory
-8) 2E, Dynamic, 320x200..640x350
+8) 2E, Dynamic, 320x13..640x350
 9) 320x200x60x2C
 10) 2T, Dynamic, 80x25..160x350, if enough video memory
-11) 4E, Dynamic, 320x200..640x350
+11) 4E, Dynamic, 320x13..640x350
 12) 4T, Dynamic, 80x25..160x350, if enough video memory
 
-Horizontal resolutions 320 and 640 are supported with divisors 1, 2, 4. Both 200 and 350 vertical resoutions with divisors 1..14 are supported for EGA, 200 with divisors 1..8 for CGA and only 350 for MDA (up to 32 can be supported, but it's pointless, plus EGA/CGA/MDA font has 14/8/14 pixels height). Values are rounded up to closest integers.
+Horizontal resolutions 320 and 640 are supported with divisors 1, 2, 4. For text modes both 200 and 350 vertical resoutions with divisors 1..14 are supported for EGA, 200 with divisors 1..8 for CGA and only 350 for MDA (up to 32 can be supported, but it's pointless, plus EGA/CGA/MDA font has 14/8/14 pixels height). For graphic modes both 200 and 350 vertical resolutions with divisors 1..16. Values are rounded up to closest integers.
+
+Different amounts of video memory are supported. Amount of memory installed doesn't affect text modes, as all text modes require 64Kb only. For graphic modes amount of memory affects amount of pages avilialbe. Modes, that require more than 64Kb VRAM (640x350 for example) are special case. If video card has only 64Kb VRAM installed - these modes can be 2bpp only (1, ME, 2E).
 
 VGA.drv
 1) 1, Dynamic, 160x22..720x480
