@@ -103,7 +103,7 @@ EGA.drv
 
 Horizontal resolutions 320 and 640 are supported with divisors 1, 2, 4. For text modes both 200 and 350 vertical resoutions with divisors 1..14 are supported for EGA, 200 with divisors 1..8 for CGA and only 350 for MDA (up to 32 can be supported, but it's pointless, plus EGA/CGA/MDA font has 14/8/14 pixels height). For graphic modes both 200 and 350 vertical resolutions with divisors 1..16. Values are rounded up to closest integers.
 
-Different amounts of video memory are supported. Amount of memory installed doesn't affect text modes, as all text modes require 64Kb only. For graphic modes amount of memory affects amount of pages avilialbe. Modes, that require more than 64Kb VRAM (640x350 for example) are special case. If video card has only 64Kb VRAM installed - these modes can be 2bpp only (1, ME, 2E).
+Different amounts of video memory are supported. Amount of memory installed doesn't affect text modes, as all text modes require 64Kb only. For graphic modes amount of memory affects number of pages avilialbe. Modes, that require more than 64Kb VRAM (640x350 for example) are special case. If video card has only 64Kb VRAM installed - these modes can be 2bpp only (1, ME, 2E).
 
 VGA.drv
 1) 1, Dynamic, 160x22..720x480
