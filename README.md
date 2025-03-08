@@ -80,6 +80,11 @@ HGC.drv
 2) 160x25x50xMM
 3) 720x348x50x1H, Flip is supported
 
+Use ModeConfig option to control, whether half or full mode is used. Full mode can't be used, if color video card is installed due to memory address conflict. Following modes are supported:
+1) Detect. Use half mode, if color video card is present, use full otherwise.
+2) Force half mode. Use, if color video card isn't autodetected correctly.
+3) Force full mode. Use, if no other video card is present or if it doesn't work in text mode.
+
 CGA.drv
 1) 640x200x60x1C
 2) 320x200x60x1C
