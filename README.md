@@ -132,7 +132,7 @@ VGA.drv
 19) 8XD, Dynamic, 160x11..360x480
 20) 8XR, Dynamic, 160x11..360x480    
 
-Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..32 in graphic modes and 1..16/31 in text modes (depends on CharGenLoadMode setting: enabled - 31, disabled - 16). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
+Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..32 in graphic modes and 1..16/31 in text modes (depends on CharGenLoadMode setting: enabled - 31, disabled - 16). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31. Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
 CharGenLoadMode option:
 1) Enabled only if necessary (>16 lines)
