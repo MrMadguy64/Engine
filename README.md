@@ -113,18 +113,18 @@ Different amounts of video memory are supported. Amount of memory installed does
 VGA.drv
 1) 1, Dynamic, 160x11..720x480
 2) 640x200x70x1C
-3) 1T, Dynamic, 80x11..180x480, if enough video memory
+3) 1T, Dynamic, 80x12..180x480, if enough video memory
 4) MV, Dynamic, 160x11..720x480
 5) ME, Dynamic, 160x11..720x480
-6) MM, Dynamic, 80x11..180x480, if enough video memory (Mono only)
-7) MT, Dynamic, 80x11..180x480, if enough video memory
+6) MM, Dynamic, 80x12..180x480, if enough video memory (Mono only)
+7) MT, Dynamic, 80x12..180x480, if enough video memory
 8) 2V, Dynamic, 160x11..720x480
 9) 2E, Dynamic, 160x11..720x480
 10) 320x200x70x2C
-11) 2T, Dynamic, 80x11..180x480, if enough video memory
+11) 2T, Dynamic, 80x12..180x480, if enough video memory
 12) 4V, Dynamic, 160x11..720x480
 13) 4E, Dynamic, 160x11..720x480
-14) 4T, Dynamic, 80x11..180x480, if enough video memory
+14) 4T, Dynamic, 80x12..180x480, if enough video memory
 15) 8, Dynamic, 160x11..360x480, if enough video memory
 16) 8X, Dynamic, 160x11..360x480
 17) 8D, Dynamic, 160x11..360x480, if enough video memory
@@ -132,7 +132,7 @@ VGA.drv
 19) 8XD, Dynamic, 160x11..360x480
 20) 8XR, Dynamic, 160x11..360x480    
 
-Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..32 in graphic modes and 1..16/32 in text modes (depends on CharGenLoadMode setting: enabled - 32, disabled - 16). Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
+Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..32 in graphic modes and 1..16/31 in text modes (depends on CharGenLoadMode setting: enabled - 31, disabled - 16). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
 CharGenLoadMode option:
 0 - Enabled only if necessary (>16 lines)
