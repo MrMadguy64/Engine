@@ -135,8 +135,11 @@ VGA.drv
 Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..32 in graphic modes and 1..16/31 in text modes (depends on CharGenLoadMode setting: enabled - 31, disabled - 16). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
 CharGenLoadMode option:
+
 0 - Enabled only if necessary (>16 lines)
+
 1 - Force, always enabled (even for standard modes) - use in case of problems with default character generator
+
 2 - Disabled, modes that require it aren't available - use in case of compatibility problems with character generator load code
 
 Mono monitor support doesn't require any special actions - it's supported by BIOS internally.
