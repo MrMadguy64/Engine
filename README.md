@@ -111,28 +111,33 @@ Horizontal resolutions 320 and 640 are supported with divisors 1, 2, 4. For text
 Different amounts of video memory are supported. Amount of memory installed doesn't affect text modes, as all text modes require 64Kb only. For graphic modes amount of memory affects number of pages avilialbe. Modes, that require more than 64Kb VRAM (640x350 for example) are special case. If video card has only 64Kb VRAM installed - these modes can be 2bpp only (1, ME, 2E).
 
 VGA.drv
-1) 1, Dynamic, 160x22..720x480
+1) 1, Dynamic, 160x11..720x480
 2) 640x200x70x1C
-3) 1T, Dynamic, 80x22..180x480, if enough video memory
-4) MV, Dynamic, 160x22..720x480
-5) ME, Dynamic, 160x22..720x480
-6) MM, Dynamic, 80x22..180x480, if enough video memory (Mono only)
-7) MT, Dynamic, 80x22..180x480, if enough video memory
-8) 2V, Dynamic, 160x22..720x480
-9) 2E, Dynamic, 160x22..720x480
+3) 1T, Dynamic, 80x11..180x480, if enough video memory
+4) MV, Dynamic, 160x11..720x480
+5) ME, Dynamic, 160x11..720x480
+6) MM, Dynamic, 80x11..180x480, if enough video memory (Mono only)
+7) MT, Dynamic, 80x11..180x480, if enough video memory
+8) 2V, Dynamic, 160x11..720x480
+9) 2E, Dynamic, 160x11..720x480
 10) 320x200x70x2C
-11) 2T, Dynamic, 80x22..180x480, if enough video memory
-12) 4V, Dynamic, 160x22..720x480
-13) 4E, Dynamic, 160x22..720x480
-14) 4T, Dynamic, 80x22..180x480, if enough video memory
-15) 8, Dynamic, 160x22..360x480, if enough video memory
-16) 8X, Dynamic, 160x22..360x480
-17) 8D, Dynamic, 160x22..360x480, if enough video memory
-18) 8R, Dynamic, 160x22..360x480, if enough video memory
-19) 8XD, Dynamic, 160x22..360x480
-20) 8XR, Dynamic, 160x22..360x480    
+11) 2T, Dynamic, 80x11..180x480, if enough video memory
+12) 4V, Dynamic, 160x11..720x480
+13) 4E, Dynamic, 160x11..720x480
+14) 4T, Dynamic, 80x11..180x480, if enough video memory
+15) 8, Dynamic, 160x11..360x480, if enough video memory
+16) 8X, Dynamic, 160x11..360x480
+17) 8D, Dynamic, 160x11..360x480, if enough video memory
+18) 8R, Dynamic, 160x11..360x480, if enough video memory
+19) 8XD, Dynamic, 160x11..360x480
+20) 8XR, Dynamic, 160x11..360x480    
 
-Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..16 (up to 32 can be supported, but it's pointless, plus VGA font has 16 pixels height). Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
+Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..32 in graphic modes and 1..16/32 in text modes (depends on CharGenLoadMode setting: enabled - 32, disabled - 16). Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
+
+CharGenLoadMode option:
+0 - Enabled only if necessary (>16 lines)
+1 - Force, always enabled (even for standard modes) - use in case of problems with default character generator
+2 - Disabled, modes that require it aren't available - use in case of compatibility problems with character generator load code
 
 Mono monitor support doesn't require any special actions - it's supported by BIOS internally.
 
