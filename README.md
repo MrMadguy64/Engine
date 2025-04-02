@@ -93,56 +93,73 @@ CGA.drv
 Horizontal resolutions 320 and 640 are supported with divisor 4. Vertial resolution 200 is supported with divisors 2..8. Values are rounded down to closest integers. Please note: only 2, 4 and 8 divisors use Standard timings - others require Compatiblity to be set to Experimental!
 
 EGA.drv
-1) 1, Dynamic, 320x7..640x350
+1) 1, Dynamic, 320x6..640x350
 2) 640x200x60x1C
-3) 1T, Dynamic, 80x7..160x350, if enough video memory
-4) ME, Dynamic, 320x7..640x350 (EGA/CGA only)
+3) 1T, Dynamic, 80x6..160x350, if enough video memory
+4) ME, Dynamic, 320x6..640x350 (EGA/CGA only)
 5) 640x350x60xME (MDA only)
 6) 160x25x60xMM (MDA only)
-7) MT, Dynamic, 80x7..160x350, if enough video memory
-8) 2E, Dynamic, 320x7..640x350
+7) MT, Dynamic, 80x6..160x350, if enough video memory
+8) 2E, Dynamic, 320x6..640x350
 9) 320x200x60x2C
-10) 2T, Dynamic, 80x7..160x350, if enough video memory
-11) 4E, Dynamic, 320x7..640x350
-12) 4T, Dynamic, 80x7..160x350, if enough video memory
+10) 2T, Dynamic, 80x6..160x350, if enough video memory
+11) 4E, Dynamic, 320x6..640x350
+12) 4T, Dynamic, 80x6..160x350, if enough video memory
 
-Horizontal resolutions 320 and 640 are supported with divisors 1, 2, 4. Vertial resolutions 200 and 350 with divisors 1..32 in EGA graphic modes, 200 with divisors 1..32 in CGA graphic modes, only 350 in MDA graphic modes, 200 and 350 with divisors 1..14/31 in EGA text modes, 200 with divisors 1..8/31 for CGA in text modes and only 1 for MDA in text modes (depends on CharGenLoadMode setting: enabled - 31, disabled - 14/8). Values are rounded up to closest integers.
+Horizontal resolutions 320 and 640 are supported with divisors 1, 2, 4. Vertial resolutions 200 and 350 with divisors 1..32 in EGA graphic modes, 200 with divisors 1..32 in CGA graphic modes, only 350 in MDA graphic modes, 200 and 350 with divisors 1..14/31 in EGA text modes, 200 with divisors 1..8/31 for CGA in text modes and only 1 for MDA in text modes (depends on CharGenLoadMode setting: enabled - 31, disabled - 14/8, depends on HeightRoundMode). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31.
 
 CharGenLoadMode option:
-1) Enabled only if necessary (>14/8 lines)
+1) Enabled only if necessary (>8/14 lines)
 2) Force enabled (even for standard modes) - use in case of problems with default character generator
 3) Force disabled (disables modes, that require it) - use in case of compatibility problems with character generator load code
+
+HeightRoundMode option:
+1) Round up, preserves vertical resolution, but last line may be cut
+2) Round down, vertical resolution may decrease, but all lines have the same height
 
 Different amounts of video memory are supported. Amount of memory installed doesn't affect text modes, as all text modes require 64Kb only. For graphic modes amount of memory affects number of pages avilialbe. Modes, that require more than 64Kb VRAM (640x350 for example) are special case. If video card has only 64Kb VRAM installed - these modes can be 2bpp only (1, ME, 2E).
 
 VGA.drv
-1) 1, Dynamic, 160x11..720x480
+1) 1, Dynamic, 160x5..720x480
 2) 640x200x70x1C
-3) 1T, Dynamic, 80x12..180x480, if enough video memory
-4) MV, Dynamic, 160x11..720x480
-5) ME, Dynamic, 160x11..720x480
-6) MM, Dynamic, 80x12..180x480, if enough video memory (Mono only)
-7) MT, Dynamic, 80x12..180x480, if enough video memory
-8) 2V, Dynamic, 160x11..720x480
-9) 2E, Dynamic, 160x11..720x480
+3) 1T, Dynamic, 80x5..180x480, if enough video memory
+4) MV, Dynamic, 160x5..720x480
+5) ME, Dynamic, 160x5..720x480
+6) MM, Dynamic, 80x5..180x480, if enough video memory (Mono only)
+7) MT, Dynamic, 80x5..180x480, if enough video memory
+8) 2V, Dynamic, 160x5..720x480
+9) 2E, Dynamic, 160x5..720x480
 10) 320x200x70x2C
-11) 2T, Dynamic, 80x12..180x480, if enough video memory
-12) 4V, Dynamic, 160x11..720x480
-13) 4E, Dynamic, 160x11..720x480
-14) 4T, Dynamic, 80x12..180x480, if enough video memory
-15) 8, Dynamic, 160x11..360x480, if enough video memory
-16) 8X, Dynamic, 160x11..360x480
-17) 8D, Dynamic, 160x11..360x480, if enough video memory
-18) 8R, Dynamic, 160x11..360x480, if enough video memory
-19) 8XD, Dynamic, 160x11..360x480
-20) 8XR, Dynamic, 160x11..360x480    
+11) 2T, Dynamic, 80x5..180x480, if enough video memory
+12) 4V, Dynamic, 160x5..720x480
+13) 4E, Dynamic, 160x5..720x480
+14) 4T, Dynamic, 80x5..180x480, if enough video memory
+15) 8, Dynamic, 160x5..360x480, if enough video memory
+16) 8X, Dynamic, 160x5..360x480
+17) 8D, Dynamic, 160x5..360x480, if enough video memory
+18) 8R, Dynamic, 160x5..360x480, if enough video memory
+19) 8XD, Dynamic, 160x5..360x480
+20) 8XR, Dynamic, 160x5..360x480    
 
-Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..32 in graphic modes and 1..16/31 in text modes (depends on CharGenLoadMode setting: enabled - 31, disabled - 16). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31. Values are rounded up to closest integers. Don't forget to set Compatiblity to Experimental for 360/720 modes!
+Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..64 (even values only, if >32) in graphic modes and 1..8/14/16/62 in text modes (depends on CharGenLoadMode setting: enabled - 62, disabled - 8/14/16, depends on CharGenFontMode/CharGenMonoMode, depends on HeightRoundMode). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31. ScanLineDouble bit, that is used by CRTC for CGA emulation, can double this value. Thus, max divisor is 62 in text modes. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
 CharGenLoadMode option:
-1) Enabled only if necessary (>16 lines)
+1) Enabled only if necessary (>8/14/16 lines)
 2) Force enabled (even for standard modes) - use in case of problems with default character generator
 3) Force disabled (disables modes, that require it) - use in case of compatibility problems with character generator load code
+
+HeightRoundMode option:
+1) Round up, preserves vertical resolution, but last line may be cut
+2) Round down, vertical resolution may decrease, but all lines have the same height
+
+CharGenFontMode option:
+Controls, what text modes are considered to be base stanard ones to be modified. It's important, because this setting affects CharGenLoadMode and Compatibility settings. Choosing wrong settign may cause garbled picture or wrong mode selection. Certain font height can be: Assumed, Forced, Detected. Unless you'd change font height purposely, it's safe to assume it to be 8x16 to avoid unnecessary API calls. VGA info only detection method is unreliable on IBM VGA, because IBM VGA uses 200-lines bit only as temporary storage when color->mono mode switching. It's value can be lost in case of mono->color mode switch. It's unused, if secondary adapter is present, as color<->mono mode switches are impossible in this case. It's reliable in single adapter mode only and only if color modes are used. But it can be reliable in later BIOSes and emulators, that assume wrongly documented behavior. 
+
+CharGenMonoMode option:
+IBM VGA-specific option. IBM VGA has very specific behavior, when performing color<->mono switches. 350-lines mode is forced in mono modes, if 400-lines mode isn't choosen. Problem is - video card can be in color mode, when font height is detected via CharGenFontMode. Therefore we should fall back to 350-lines, if 200-lines mode is detected, but mode selected is mono one. Later BIOSes may allow 200-lines in mono modes. Especially emulators. Simply because this behavior isn't documented well enough.
+
+CharGenRestoreMode:
+Font height is global settings. It isn't restored automatically, that can cause other programs to operate wrongly. Use this setting to control, how font height setting is restored, when VGA driver is uninited. You can: do nothing, force certain height, restore previously detected value. Unless you'd change font height purposely, it's better to use "Don't restore" option in order to avoid unnecessary API calls.
 
 Mono monitor support doesn't require any special actions - it's supported by BIOS internally.
 
