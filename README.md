@@ -31,7 +31,7 @@ DOS: Same as for HX, i386, DOS 5.0.
 
 If you don't have extended memory - use SET DPMILDR=2 environment varaible.
 
-**Warning!** If you want to complie your application as GUI one, you need modified version of DPMILD32.exe - one compiled with ?NOGUIAPPS=0 and ?ALLOWGUIAPPS=0 options
+**Warning!** If you want to complie your application as GUI one, you need modified version of DPMILD32.exe - one compiled with ?NOGUIAPPS=0 and ?ALLOWGUIAPPS=0 options.
 
 Windows: Any Win32, including Windows 3.x + Win32s installed and Windows NT 3.x, Windows 9x/NT 4.x are recommended.
 
