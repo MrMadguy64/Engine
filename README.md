@@ -228,12 +228,14 @@ GDI.drv
 3) 2bpp, emulated
 4) 4bpp
 5) 8bpp
-6) 15bpp
-7) 16bpp
-8) 24bpp
-9) 32bpp
+6) 8bpp Direct color RGB
+7) 8bpp Direct color BGR
+8) 15bpp (Except Win3x)
+9) 16bpp (Except Win3x)
+10) 24bpp
+11) 32bpp (Except Win3x)
 
-**Please note!** Format support depends on specific driver implementation and currently selected video mode. You'll get blank screen, if format is unsupported, garbled colors or distorted image, if it's supported partially. Testing has shown, that some drivers can even support undocumented formats. They aren't implemented in GDI driver now. I'm not sure, if they should be implemented. And if yes - then how they should be implemented, because they're purely GDI specific.
+**Please note!** Format support depends on Windows version, specific driver implementation and currently selected video mode. You'll get blank screen, if format is unsupported, garbled colors or distorted image, if it's supported partially. Testing has shown, that some drivers can even support undocumented formats. For example 15/16/32 bit formats can be partially supported by Win3x drivers, despite being officially unsupported by GDI. They aren't implemented in GDI driver now. I'm not sure, if they should be implemented. And if yes - then how they should be implemented, because they're purely GDI specific.
 
 **Please note!** Emulated mode if unsupported by GDI, requires software processing and therefore can be ~2x slower.
 
