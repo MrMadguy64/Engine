@@ -220,6 +220,20 @@ Compatibility options:
 
 **Windows:**
 
+Windows-specific options, that are shared between all Windows drivers:
+
+**Please note!:** Default settings provide the best possible performance in all situtaions. Mapping algorithms are designed specifically to avoid any hardcoded behaviors. For example arbirtary DIB, system and static palette sizes are supported, not just ordinal 256 colors. Not all option combinations are functional though.
+
+1) PaletteMode. Should palette be enabled? Auto is recommended. Forcing palette off for palette device would cause fallback to default palette. Forcing palette on for RGB device would cause perofmance penalty and depending on Windows version certain features may not even function as expected.
+2) RGBPaletteMode. What logical palette should be loaded for RGB video modes, such as 16/24/32bpp modes?
+3) DIBPaletteMode. DIB to logical palette mapping. Explicit - we perform mapping ourselves. Implicit - palette manager performs mapping for us. Explicit is quicker, as mapping can be pre-computed, but it requires relying on certain palette manager behavior, so it's less compatible. Even explicit mapping is performed by palette manager itself. Palette manager has several limitations, that can cause wrong results in some cases.
+4) LogPaletteMode. Logical to system palette mapping. Explicit - we perform mapping ourselves. Implicit - palette manager performs mapping for us. Explicit is quicker, as mapping can be pre-computed, but it requires relying on certain palette manager behavior, so it's less compatible.
+5) IdentityPaletteMode. Identity logical to system palette mapping - is when mapping is like 1, 2, ..,254, 255. Palette manager should skip mapping in this case -> better performance. Non-identity palette implies "map all entries" color reduction mode, if DIB palette doesn't fit into system one. This can reduce quality for some colors at the end of palette.
+6) StaticColorsMode. Static colors limit palette size and prevent identity mapping in some cases. Disabling static colors can affect other applications, but as we always use fullscreen rendering, it shouldn't be problem.
+7) ColorReductionMode. What to do if DIB palette doesn't fit into system palette? This can happen in case of using direct color modes, that require full 256 colors palette size. What we do - is try to remap DIB palette to smaller logical palette, that would fit into system palette, or predefined identity palettes, provided by system.
+8) StaticSourceMode. From where should we gather static colors for implicit color mapping? System palette may not be available in all cases. For example if static colors are disable or in case of RGB device. Switch to default palette in this case.
+9) ClearPaletteMode. For some unknown reason palette manager prefers palette entries, that have never been used before. This can mess our indetity mapping up. Therefore we should "clear" palette via marking all entries as already used. In theory it should be enough to clear palette only once. But option to clear it after every switch to other application is also provided.
+
 For all modes: VSync controls if WM_PAINT or direct rendering is performed, Copy and Swap are supported, NoDoubleBuffer is ignored
 
 GDI.drv
