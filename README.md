@@ -17,7 +17,7 @@ Any form of reverse-engineering is forbidden, including but not limited to debug
 
 **License philosophy:**
 
-Programmers should be professionals, not just enthusiasts, who have to provide unrelated services in order to earn money. If one uses my work to earn money - then he should share part of his revenue with me. If you earn money via clogging nails, then why do you think hammer should be free for you? Buy it! I've put my effort into making tool for you to earn money. And it's like law of energy conservation. Every drop of sweat should pay off.
+Programmers should be professionals, not just enthusiasts, who have to provide unrelated services in order to earn money. If one uses my work to earn money - then he should share part of his revenue with me. If you earn money via clogging nails, then why do you think hammer should be free for you? Buy it! I've put my effort into making tool for you to earn money. And it's like law of energy conservation. Every drop of sweat should pay off. It's not fair, if some tool is used to earn billions of dollars, while it's author should be enthusiast, who can count on sporadic donations only. This includes new threat - AI. For now it isn't well regulated. Free projects can be used for AI training, that can be treated as commercial educational purposes, as goal of such training - is to earn profits then, while devaluing initial author's effort.
 
 **Warranty disclaimer:** 
 
