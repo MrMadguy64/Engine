@@ -43,6 +43,14 @@ Possible workarounds:
 1) Don't use Launcher.exe. Copy Data directory to Bin32 and launch Game.exe directly.
 2) Try to change command line length via adding arbitrary string to it's end.
 
+**Game.exe controls:**
+
+1) Arrow keys - move bitmap.
+2) WASD - move bitmap mask.
+3) R - reset bitmap mask.
+4) B - toggle text background: transparent, extent (red), width (blue).
+5) Mouse - cursor and mouse buttons state.
+
 **Global options:**
 
 Mode filtering:
