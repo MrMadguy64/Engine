@@ -60,7 +60,7 @@ First matching mode is picked. Mode conflicts can possibly happen, when modes ar
 1) Width, pixels, 0 - unspecified, any value match
 2) Height, pixels, 0 - unspecified, any value match
 3) Frequency, Hz, 0 - unspecified, any value match
-4) Pixel format, exact value matched first, then alternative value, that matches bit count only. Alternative values make life easier. They allow picking video-card specific modes like 4bppV or 4bppE via simply specifying 4bpp. Please note. While some drivers allow some sort of "better modes lised first" priority, others don't, like SVGA one for example.
+4) Pixel format, exact value matched first, meta format matched then. Meta formats make life easier. They allow picking video-card specific modes like 4bppV or 4bppE via simply specifying 4bpp. Please note. While some drivers allow some sort of "better modes lised first" priority, others don't, like SVGA one for example.
 5) Compatibility. Safety measure, that filters out modes, that can be potentially dangerous to use. Set higher values at your own risk! Set lower values, if you have problems.
 
 Mode options:
