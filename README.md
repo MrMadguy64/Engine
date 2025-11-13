@@ -133,24 +133,26 @@ VGA.drv
 1) 1P, Dynamic, 160x5..720x480
 2) 640x200x70x1C
 3) 1T, Dynamic, 80x5..180x480, if enough video memory
-4) MV, Dynamic, 320x5..720x480
-5) ME, Dynamic, 320x5..720x480
-6) MM, Dynamic, 80x5..180x480, if enough video memory (Mono only)
-7) MT, Dynamic, 80x5..180x480, if enough video memory
-8) 2V, Dynamic, 320x5..720x480
-9) 2E, Dynamic, 320x5..720x480
-10) 320x200x70x2C
-11) 2T, Dynamic, 80x5..180x480, if enough video memory
-12) 4V, Dynamic, 320x5..720x480
-13) 4E, Dynamic, 320x5..720x480
-14) 4T, Dynamic, 80x5..180x480, if enough video memory
-15) 4P, Dynamic, 320x5..720x480, if enough video memory
-16) 8P, Dynamic, 160x5..360x480, if enough video memory
-17) 8X, Dynamic, 160x5..360x480
-18) 8D, Dynamic, 160x5..360x480, if enough video memory
-19) 8R, Dynamic, 160x5..360x480, if enough video memory
-20) 8XD, Dynamic, 160x5..360x480
-21) 8XR, Dynamic, 160x5..360x480    
+4) MP, Dynamic, 80x5..180x480, if enough video memory
+5) MV, Dynamic, 320x5..720x480
+6) ME, Dynamic, 320x5..720x480
+7) MM, Dynamic, 80x5..180x480, if enough video memory (Mono only)
+8) MT, Dynamic, 80x5..180x480, if enough video memory
+9) 2P, Dynamic, 80x5..180x480, if enough video memory
+10) 2V, Dynamic, 320x5..720x480
+11) 2E, Dynamic, 320x5..720x480
+12) 320x200x70x2C
+13) 2T, Dynamic, 80x5..180x480, if enough video memory
+14) 4V, Dynamic, 320x5..720x480
+15) 4E, Dynamic, 320x5..720x480
+16) 4T, Dynamic, 80x5..180x480, if enough video memory
+17) 4P, Dynamic, 320x5..720x480, if enough video memory
+18) 8P, Dynamic, 160x5..360x480, if enough video memory
+19) 8X, Dynamic, 160x5..360x480
+20) 8D, Dynamic, 160x5..360x480, if enough video memory
+21) 8R, Dynamic, 160x5..360x480, if enough video memory
+22) 8XD, Dynamic, 160x5..360x480
+23) 8XR, Dynamic, 160x5..360x480    
 
 Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..64 (even values only, if >32) in graphic modes and 1..8/14/16/62 in text modes (depends on CharGenLoadMode setting: enabled - 62, disabled - 8/14/16, depends on CharGenFontMode/CharGenMonoMode, depends on HeightRoundMode). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31. ScanLineDouble bit, that is used by CRTC for CGA emulation, can double this value. Thus, max divisor is 62 in text modes. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
