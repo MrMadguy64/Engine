@@ -106,15 +106,17 @@ EGA.drv
 1) 1P, Dynamic, 320x6..640x350
 2) 640x200x60x1C
 3) 1T, Dynamic, 80x6..160x350, if enough video memory
-4) ME, Dynamic, 320x6..640x350 (EGA/CGA only)
-5) 640x350x60xME (MDA only)
-6) 160x25x60xMM (MDA only)
-7) MT, Dynamic, 80x6..160x350, if enough video memory
-8) 2E, Dynamic, 320x6..640x350
-9) 320x200x60x2C
-10) 2T, Dynamic, 80x6..160x350, if enough video memory
-11) 4E, Dynamic, 320x6..640x350
-12) 4T, Dynamic, 80x6..160x350, if enough video memory
+4) MP, Dynamic, 320x6..640x350 (EGA/CGA only)
+5) ME, Dynamic, 320x6..640x350 (EGA/CGA only)
+6) 640x350x60xME (MDA only)
+7) 160x25x60xMM (MDA only)
+8) MT, Dynamic, 80x6..160x350, if enough video memory
+9) 2P, Dynamic, 320x6..640x350
+10) 2E, Dynamic, 320x6..640x350
+11) 320x200x60x2C
+12) 2T, Dynamic, 80x6..160x350, if enough video memory
+13) 4E, Dynamic, 320x6..640x350
+14) 4T, Dynamic, 80x6..160x350, if enough video memory
 
 Horizontal resolutions 320 and 640 are supported with divisors 1, 2, 4. Vertial resolutions 200 and 350 with divisors 1..32 in EGA graphic modes, 200 with divisors 1..32 in CGA graphic modes, only 350 in MDA graphic modes, 200 and 350 with divisors 1..14/31 in EGA text modes, 200 with divisors 1..8/31 for CGA in text modes and only 1 for MDA in text modes (depends on CharGenLoadMode setting: enabled - 31, disabled - 14/8, depends on HeightRoundMode). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31.
 
