@@ -134,31 +134,33 @@ Different amounts of video memory are supported. Amount of memory installed does
 VGA.drv
 1) 1P, Dynamic, 160x5..720x480
 2) 1C, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
-3) 1T, Dynamic, 80x5..180x480, if enough video memory
-4) MP, Dynamic, 80x5..180x480, if enough video memory
-5) MV, Dynamic, 320x5..720x480
-6) ME, Dynamic, 320x5..720x480
-7) MM, Dynamic, 80x5..180x480, if enough video memory (Mono only)
-8) MT, Dynamic, 80x5..180x480, if enough video memory
-9) 2P, Dynamic, 80x5..180x480, if enough video memory
-10) 2V, Dynamic, 320x5..720x480
-11) 2E, Dynamic, 320x5..720x480
-12) 2C, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
-13) 2T, Dynamic, 80x5..180x480, if enough video memory
-14) 4V, Dynamic, 320x5..720x480
-15) 4E, Dynamic, 320x5..720x480
-16) 4T, Dynamic, 80x5..180x480, if enough video memory
-17) 4P, Dynamic, 320x5..720x480, if enough video memory
-18) 8P, Dynamic, 160x5..360x480, if enough video memory
-19) 8X, Dynamic, 160x5..360x480
-20) 8D, Dynamic, 160x5..360x480, if enough video memory
-21) 8R, Dynamic, 160x5..360x480, if enough video memory
-22) 8XD, Dynamic, 160x5..360x480
-23) 8XR, Dynamic, 160x5..360x480    
+3) 1H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
+4) 1T, Dynamic, 80x5..180x480, if enough video memory
+5) MP, Dynamic, 80x5..180x480, if enough video memory
+6) MV, Dynamic, 320x5..720x480
+7) ME, Dynamic, 320x5..720x480
+8) MM, Dynamic, 80x5..180x480, if enough video memory (Mono only)
+9) MT, Dynamic, 80x5..180x480, if enough video memory
+10) 2P, Dynamic, 80x5..180x480, if enough video memory
+11) 2V, Dynamic, 320x5..720x480
+12) 2E, Dynamic, 320x5..720x480
+13) 2C, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
+14) 2H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
+15) 2T, Dynamic, 80x5..180x480, if enough video memory
+16) 4V, Dynamic, 320x5..720x480
+17) 4E, Dynamic, 320x5..720x480
+18) 4T, Dynamic, 80x5..180x480, if enough video memory
+19) 4P, Dynamic, 320x5..720x480, if enough video memory
+20) 8P, Dynamic, 160x5..360x480, if enough video memory
+21) 8X, Dynamic, 160x5..360x480
+22) 8D, Dynamic, 160x5..360x480, if enough video memory
+23) 8R, Dynamic, 160x5..360x480, if enough video memory
+24) 8XD, Dynamic, 160x5..360x480
+25) 8XR, Dynamic, 160x5..360x480    
 
 Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..64 (even values only, if >32) in graphic modes and 1..8/14/16/62 in text modes (depends on CharGenLoadMode setting: enabled - 62, disabled - 8/14/16, depends on CharGenFontMode/CharGenMonoMode, depends on HeightRoundMode). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31. ScanLineDouble bit, that is used by CRTC for CGA emulation, can double this value. Thus, max divisor is 62 in text modes. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
-CGA and HGC modes are special case. Only divisor 2 is available for both horizontal and vertical resolutions. Vertcal resolution is limited by three factors: max bank size, max number of banks, max number of lines per bank. Max bank size is always 8Kb. For CGA max number of banks is 2, for HGC - is 4. If CGALineLimit mode is enabled, only 128 lines per bank are avalable. Vertial resolution is affected by HeightRoundMode. If HeightRoundMode is round down, then Height = Height - (Height mod Banks). For example it would mean 348 lines instead of 350 in case of HGC mode.
+CGA and HGC modes are special case. Only divisor 2 is available for both horizontal and vertical resolutions. Vertcal resolution is limited by three factors: max bank size, max number of banks, max number of lines per bank. Max bank size is always 8Kb. For CGA max number of banks is 2, for HGC - is 4. If CGALineLimit mode is enabled, only 128 lines per bank are avalable. Vertial resolution is affected by HeightRoundMode. If HeightRoundMode is round down, then Height = Height - (Height mod Banks). For example it would mean 348 lines instead of 350 in case of HGC mode. CGAAllow64Kb doesn't affect resolutions - only number of pages available.
 
 CharGenLoadMode option:
 1) Enabled only if necessary (>8/14/16 lines)
