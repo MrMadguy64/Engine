@@ -139,24 +139,26 @@ VGA.drv
 5) MP, Dynamic, 80x5..180x480, if enough video memory
 6) MV, Dynamic, 320x5..720x480
 7) ME, Dynamic, 320x5..720x480
-8) MM, Dynamic, 80x5..180x480, if enough video memory (Mono only)
-9) MT, Dynamic, 80x5..180x480, if enough video memory
-10) 2P, Dynamic, 80x5..180x480, if enough video memory
-11) 2V, Dynamic, 320x5..720x480
-12) 2E, Dynamic, 320x5..720x480
-13) 2C, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
-14) 2H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
-15) 2T, Dynamic, 80x5..180x480, if enough video memory
-16) 4V, Dynamic, 320x5..720x480
-17) 4E, Dynamic, 320x5..720x480
-18) 4T, Dynamic, 80x5..180x480, if enough video memory
-19) 4P, Dynamic, 320x5..720x480, if enough video memory
-20) 8P, Dynamic, 160x5..360x480, if enough video memory
-21) 8X, Dynamic, 160x5..360x480
-22) 8D, Dynamic, 160x5..360x480, if enough video memory
-23) 8R, Dynamic, 160x5..360x480, if enough video memory
-24) 8XD, Dynamic, 160x5..360x480
-25) 8XR, Dynamic, 160x5..360x480    
+8) MC, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
+9) MH, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
+10) MM, Dynamic, 80x5..180x480, if enough video memory (Mono only)
+11) MT, Dynamic, 80x5..180x480, if enough video memory
+12) 2P, Dynamic, 80x5..180x480, if enough video memory
+13) 2V, Dynamic, 320x5..720x480
+14) 2E, Dynamic, 320x5..720x480
+15) 2C, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
+16) 2H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
+17) 2T, Dynamic, 80x5..180x480, if enough video memory
+18) 4V, Dynamic, 320x5..720x480
+19) 4E, Dynamic, 320x5..720x480
+20) 4T, Dynamic, 80x5..180x480, if enough video memory
+21) 4P, Dynamic, 320x5..720x480, if enough video memory
+22) 8P, Dynamic, 160x5..360x480, if enough video memory
+23) 8X, Dynamic, 160x5..360x480
+24) 8D, Dynamic, 160x5..360x480, if enough video memory
+25) 8R, Dynamic, 160x5..360x480, if enough video memory
+26) 8XD, Dynamic, 160x5..360x480
+27) 8XR, Dynamic, 160x5..360x480    
 
 Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..64 (even values only, if >32) in graphic modes and 1..8/14/16/62 in text modes (depends on CharGenLoadMode setting: enabled - 62, disabled - 8/14/16, depends on CharGenFontMode/CharGenMonoMode, depends on HeightRoundMode). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31. ScanLineDouble bit, that is used by CRTC for CGA emulation, can double this value. Thus, max divisor is 62 in text modes. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
