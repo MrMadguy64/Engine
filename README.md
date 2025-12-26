@@ -198,6 +198,8 @@ MemoryRemapMode option:
 
 Plase note. Default mode is chosen according to base video mode. And base video mode is chosen to achieve necessary target video mode via minimal amount of reprogramming. This is needed for compatibility purposes. Non-standard video cards can use non-standard settings, we may not know anything about. It's better to set the most appropriate base mode and tweak it then. As side effect - 8bpp CGA/HGC modes no longer use 32Kb color mapping by default. They use 64Kb color one. Other ones use standard BIOS settings.
 
+Special note about 128Kb mode. VRAM size >64Kb can be achieved via plane merging only. Therefore this mode requires at least Odd/Even (aka Chain2) video mode. I'm not sure about Chain4, but we can guess, that it should work too. According to IBM EGA Manual, it also requires >64Kb VRAM. It's self-obvious requirement anyway, as 64Kb VRAM would never exceed 64Kb address window. Therefore - this mode is useless in case of 4bpp planar modes (and also "emulated" 1bpp, Mono and 2bpp planar modes). It only works in text, 2bpp CGA/HGC and (theoretically) 8bpp packed pixel (including 4bpp packed pixel) modes.
+
 CGALineLimit option:
 1) Enabled - 128 lines per bank max, compatible with standard CGA modes
 2) Disabled - not limited, any number, that would fit into 8Kb bank, allows some modes, like CGA 320x400 1bpp (200 lines per bank)
