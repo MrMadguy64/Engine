@@ -104,56 +104,53 @@ Horizontal resolutions 320 and 640 are supported with divisor 4. Vertial resolut
 
 EGA.drv
 1) 1P, Dynamic, 320x6..640x350
-2) 1C, Dynamic, 320x6..640x350
-3) 1H, Dynamic, 320x6..640x350
-4) 1M, Dynamic, 80x6..160x350, if enough video memory (MDA only)
+2) 1C, Dynamic, 320x6..640x350, restricted by CGA's limitations (see below)
+3) 1H, Dynamic, 320x6..640x350, restricted by HGC's limitations (see below)
+4) 1M, Dynamic, 80x6..160x350, if enough video memory (MDA only), affected by Mono limitations (see below)
 5) 1T, Dynamic, 80x6..160x350, if enough video memory
 6) MP, Dynamic, 320x6..640x350
 7) ME, Dynamic, 320x6..640x350
 8) 640x350x60xME (MDA only)
-9) 160x25x60xMM (MDA only)
-10) MT, Dynamic, 80x6..160x350, if enough video memory
-11) 2P, Dynamic, 320x6..640x350
-12) 2E, Dynamic, 320x6..640x350
-13) 2C, Dynamic, 320x6..640x350
-14) 2H, Dynamic, 320x6..640x350
-15) 2M, Dynamic, 80x6..160x350, if enough video memory
-16) 2T, Dynamic, 80x6..160x350, if enough video memory
-17) 4E, Dynamic, 320x6..640x350
-18) 4T, Dynamic, 80x6..160x350, if enough video memory
+9) MC, Dynamic, 320x6..640x350, restricted by CGA's limitations (see below)
+3) MH, Dynamic, 320x6..640x350, restricted by HGC's limitations (see below)
+10) 160x25x60xMM (MDA only), affected by Mono limitations (see below)
+11) MT, Dynamic, 80x6..160x350, if enough video memory
+12) 2P, Dynamic, 320x6..640x350
+13) 2E, Dynamic, 320x6..640x350
+14) 2C, Dynamic, 320x6..640x350, restricted by CGA's limitations (see below)
+15) 2H, Dynamic, 320x6..640x350, restricted by HGC's limitations (see below)
+17) 2M, Dynamic, 80x6..160x350, if enough video memory, affected by Mono limitations (see below)
+18) 2T, Dynamic, 80x6..160x350, if enough video memory
+19) 4E, Dynamic, 320x6..640x350
+20) 4T, Dynamic, 80x6..160x350, if enough video memory
 
 Horizontal resolutions 320 and 640 are supported with divisors 1, 2, 4. Vertial resolutions 200 and 350 with divisors 1..32 in EGA graphic modes, 200 with divisors 1..32 in CGA graphic modes, only 350 in MDA graphic modes, 200 and 350 with divisors 1..14/31 in EGA text modes, 200 with divisors 1..8/31 for CGA in text modes and only 1 for MDA in text modes (depends on CharGenLoadMode setting: enabled - 31, disabled - 14/8, depends on HeightRoundMode). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31.
 
-CharGenLoadMode option:
-1) Enabled only if necessary (>8/14 lines)
-2) Force enabled (even for standard modes) - use in case of problems with default character generator
-3) Force disabled (disables modes, that require it) - use in case of compatibility problems with character generator load code
+Different amounts of video memory are supported. Amount of memory affects number of pages avilialbe. Modes, that require more than 64Kb VRAM (640x350 for example) are special case. If video card has only 64Kb VRAM installed - these modes can be no more than 2bpp only.
 
-HeightRoundMode option:
-1) Round up, preserves vertical resolution, but last line may be cut
-2) Round down, vertical resolution may decrease, but all lines have the same height
+CGA and HGC modes are special case. Only divisor 2 is available for both horizontal and vertical resolutions. Vertcal resolution is limited by three factors: max bank size, max number of banks, max number of lines per bank. Max bank size is always 8Kb. For CGA max number of banks is 2, for HGC - is 4. If CGALineLimit mode is enabled, only 128 lines per bank are avalable. Vertial resolution is affected by HeightRoundMode. If HeightRoundMode is round down, then Height = Height - (Height mod Banks). For example it would mean 348 lines instead of 350 in case of HGC mode. MemoryRemapMode doesn't affect resolutions - only number of pages available.
 
-Different amounts of video memory are supported. Amount of memory installed doesn't affect text modes, as all text modes require 64Kb only. For graphic modes amount of memory affects number of pages avilialbe. Modes, that require more than 64Kb VRAM (640x350 for example) are special case. If video card has only 64Kb VRAM installed - these modes can be 2bpp only (1, ME, 2E).
+Mono text modes require Mono attribute support in Attribute Controller. According to information from Internet, it isn't always implemented. Some documentation claims, that it has never been implemented. But some, like Cirrus Logic one, claims opposite. If it isn't implemented, some attributes can be treated wrong way. For example 78h should have "dark" foreground. But if this attribute is treated as color one instead, foreground becomes "light". It isn't so noticeable in MM mode, but colors looks like they're reversed in 2M mode. Another question - if supported, do Mono attributes bypass Attribute Controller and/or DAC palettes? DAC palette shouldn't be bypassed. It's just impossible. But we can't be so sure about Attribute Controller's one. At least BIOS loads proper palette into Attribute Controller, that looks like only bits 0 and 3 are used. As always, we try to load universal palette, that would work in any case - even if all bits would be used.
 
 VGA.drv
 1) 1P, Dynamic, 160x5..720x480
 2) 1C, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
 3) 1H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
-4) 1M, Dynamic, 80x5..180x480, if enough video memory
+4) 1M, Dynamic, 80x5..180x480, if enough video memory, affected by Mono limitations (see below)
 5) 1T, Dynamic, 80x5..180x480, if enough video memory
 6) MP, Dynamic, 80x5..180x480, if enough video memory
 7) MV, Dynamic, 320x5..720x480
 8) ME, Dynamic, 320x5..720x480
 9) MC, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
 10) MH, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
-11) MM, Dynamic, 80x5..180x480, if enough video memory (Mono only)
+11) MM, Dynamic, 80x5..180x480, if enough video memory (Mono only), affected by Mono limitations (see below)
 12) MT, Dynamic, 80x5..180x480, if enough video memory
 13) 2P, Dynamic, 80x5..180x480, if enough video memory
 14) 2V, Dynamic, 320x5..720x480
 15) 2E, Dynamic, 320x5..720x480
 16) 2C, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
 17) 2H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
-18) 2M, Dynamic, 80x5..180x480, if enough video memory 
+18) 2M, Dynamic, 80x5..180x480, if enough video memory, affected by Mono limitations (see below)
 19) 2T, Dynamic, 80x5..180x480, if enough video memory
 20) 4V, Dynamic, 320x5..720x480
 21) 4E, Dynamic, 320x5..720x480
@@ -170,7 +167,18 @@ VGA.drv
 
 Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..64 (even values only, if >32) in graphic modes and 1..8/14/16/62 in text modes (depends on CharGenLoadMode setting: enabled - 62, disabled - 8/14/16, depends on CharGenFontMode/CharGenMonoMode, depends on HeightRoundMode). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31. ScanLineDouble bit, that is used by CRTC for CGA emulation, can double this value. Thus, max divisor is 62 in text modes. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
-CGA and HGC modes are special case. Only divisor 2 is available for both horizontal and vertical resolutions. Vertcal resolution is limited by three factors: max bank size, max number of banks, max number of lines per bank. Max bank size is always 8Kb. For CGA max number of banks is 2, for HGC - is 4. If CGALineLimit mode is enabled, only 128 lines per bank are avalable. Vertial resolution is affected by HeightRoundMode. If HeightRoundMode is round down, then Height = Height - (Height mod Banks). For example it would mean 348 lines instead of 350 in case of HGC mode. CGAAllow64Kb doesn't affect resolutions - only number of pages available.
+CGA and HGC modes are special case. Only divisor 2 is available for both horizontal and vertical resolutions. Vertcal resolution is limited by three factors: max bank size, max number of banks, max number of lines per bank. Max bank size is always 8Kb. For CGA max number of banks is 2, for HGC - is 4. If CGALineLimit mode is enabled, only 128 lines per bank are avalable. Vertial resolution is affected by HeightRoundMode. If HeightRoundMode is round down, then Height = Height - (Height mod Banks). For example it would mean 348 lines instead of 350 in case of HGC mode. MemoryRemapMode doesn't affect resolutions - only number of pages available.
+
+Mono text modes require Mono attribute support in Attribute Controller. According to information from Internet, it isn't always implemented. Some documentation claims, that it has never been implemented. But some, like Cirrus Logic one, claims opposite. If it isn't implemented, some attributes can be treated wrong way. For example 78h should have "dark" foreground. But if this attribute is treated as color one instead, foreground becomes "light". It isn't so noticeable in MM mode, but colors looks like they're reversed in 2M mode. Another question - if supported, do Mono attributes bypass Attribute Controller and/or DAC palettes? DAC palette shouldn't be bypassed. It's just impossible. But we can't be so sure about Attribute Controller's one. At least BIOS loads proper palette into Attribute Controller, that looks like only bits 0 and 3 are used. As always, we try to load universal palette, that would work in any case - even if all bits would be used.
+
+Mono monitor support doesn't require any special actions - it's supported by BIOS internally.
+
+Mono modes are handled differently. There are 3 possible variants:
+1) Single - all modes listed above are supported, Mx modes are emulated due to collision between color and mono implementations.
+2) Dual color - Mx modes are emulated, MM modes are unsupported.
+3) Dual mono - only Mx and MM modes are supported.
+
+EGAVGA.drv shared options:
 
 CharGenLoadMode option:
 1) Enabled only if necessary (>8/14/16 lines)
@@ -181,9 +189,14 @@ HeightRoundMode option:
 1) Round up, preserves vertical resolution, but last line may be cut
 2) Round down, vertical resolution may decrease, but all lines have the same height
 
-CGAAllow64Kb option:
-1) Disabled - 32Kb VRAM, compatible with standard CGA modes
-2) Enabled - 64Kb VRAM, doesn't affect list of available resolutions - only number of pages available
+MemoryRemapMode option:
+1) Disabled - default mode is used 
+2) Force 128Kb, no dual monitor
+3) Force 64Kb color
+4) Force 32Kb mono
+5) Force 32Kb color
+
+Plase note. Default mode is chosen according to base video mode. And base video mode is chosen to achieve necessary target video mode via minimal amount of reprogramming. This is needed for compatibility purposes. Non-standard video cards can use non-standard settings, we may not know anything about. It's better to set the most appropriate base mode and tweak it then. As side effect - 8bpp CGA/HGC modes no longer use 32Kb color mapping by default. They use 64Kb color one. Other ones use standard BIOS settings.
 
 CGALineLimit option:
 1) Enabled - 128 lines per bank max, compatible with standard CGA modes
@@ -197,13 +210,6 @@ IBM VGA-specific option. IBM VGA has very specific behavior, when performing col
 
 CharGenRestoreMode:
 Font height is global settings. It isn't restored automatically, that can cause other programs to operate wrongly. Use this setting to control, how font height setting is restored, when VGA driver is uninited. You can: do nothing, force certain height, restore previously detected value. Unless you'd change font height purposely, it's better to use "Don't restore" option in order to avoid unnecessary API calls.
-
-Mono monitor support doesn't require any special actions - it's supported by BIOS internally.
-
-Mono modes are handled differently. There are 3 possible variants:
-1) Single - all modes listed above are supported, Mx modes are emulated due to collision between color and mono implementations.
-2) Dual color - Mx modes are emulated, MM modes are unsupported.
-3) Dual mono - only Mx and MM modes are supported.
 
 SVGA
 
