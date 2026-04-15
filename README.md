@@ -136,8 +136,8 @@ VGA.drv
 1) 1P, Dynamic, 160x5..720x480
 2) 1C, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
 3) 1H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
-4) 1EC, 320x200..720x480
-5) 1VC, 320x200..720x480
+4) 1EW, 320x200..720x480
+5) 1VD, 320x200..720x480
 6) 1M, Dynamic, 80x5..180x480, if enough video memory, affected by Mono limitations (see below)
 7) 1T, Dynamic, 80x5..180x480, if enough video memory
 8) MP, Dynamic, 80x5..180x480, if enough video memory
@@ -145,31 +145,33 @@ VGA.drv
 10) ME, Dynamic, 320x5..720x480
 11) MC, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
 12) MH, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
-13) MEC, 320x200..720x480
-14) MVC, 320x200..720x480
-15) MM, Dynamic, 80x5..180x480, if enough video memory (Mono only), affected by Mono limitations (see below)
-16) MT, Dynamic, 80x5..180x480, if enough video memory
-17) 2P, Dynamic, 80x5..180x480, if enough video memory
-18) 2V, Dynamic, 320x5..720x480
-19) 2E, Dynamic, 320x5..720x480
-20) 2C, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
-21) 2H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
-22) 2EC, 320x200..720x480
-23) 2VC, 320x200..720x480
-24) 2M, Dynamic, 80x5..180x480, if enough video memory, affected by Mono limitations (see below)
-25) 2T, Dynamic, 80x5..180x480, if enough video memory
-26) 4V, Dynamic, 320x5..720x480
-27) 4E, Dynamic, 320x5..720x480
-28) 4H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
-29) 4T, Dynamic, 80x5..180x480, if enough video memory
-30) 4P, Dynamic, 320x5..720x480, if enough video memory
-31) 8P, Dynamic, 160x5..360x480, if enough video memory
-32) 8X, Dynamic, 160x5..360x480
-33) 8D, Dynamic, 160x5..360x480, if enough video memory
-34) 8R, Dynamic, 160x5..360x480, if enough video memory
-35) 8XD, Dynamic, 160x5..360x480
-36) 8XR, Dynamic, 160x5..360x480
-37) 8H, Dynamic, 160x200..360x480, restricted by HGC's limitations (see below) 
+13) MVW, 320x200..720x480
+14) MEW, 320x200..720x480
+15) MVD, 320x200..720x480
+16) MM, Dynamic, 80x5..180x480, if enough video memory (Mono only), affected by Mono limitations (see below)
+17) MT, Dynamic, 80x5..180x480, if enough video memory
+18) 2P, Dynamic, 80x5..180x480, if enough video memory
+19) 2V, Dynamic, 320x5..720x480
+20) 2E, Dynamic, 320x5..720x480
+21) 2C, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
+22) 2H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
+23) 2VW, 320x200..720x480
+24) 2EW, 320x200..720x480
+25) 2VW, 320x200..720x480
+26) 2M, Dynamic, 80x5..180x480, if enough video memory, affected by Mono limitations (see below)
+27) 2T, Dynamic, 80x5..180x480, if enough video memory
+28) 4V, Dynamic, 320x5..720x480
+29) 4E, Dynamic, 320x5..720x480
+30) 4H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
+31) 4T, Dynamic, 80x5..180x480, if enough video memory
+32) 4P, Dynamic, 320x5..720x480, if enough video memory
+33) 8P, Dynamic, 160x5..360x480, if enough video memory
+34) 8X, Dynamic, 160x5..360x480
+35) 8D, Dynamic, 160x5..360x480, if enough video memory
+36) 8R, Dynamic, 160x5..360x480, if enough video memory
+37) 8XD, Dynamic, 160x5..360x480
+38) 8XR, Dynamic, 160x5..360x480
+39) 8H, Dynamic, 160x200..360x480, restricted by HGC's limitations (see below) 
 
 Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..64 (even values only, if >32) in graphic modes and 1..8/14/16/62 in text modes (depends on CharGenLoadMode setting: enabled - 62, disabled - 8/14/16, depends on CharGenFontMode/CharGenMonoMode, depends on HeightRoundMode). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31. ScanLineDouble bit, that is used by CRTC for CGA emulation, can double this value. Thus, max divisor is 62 in text modes. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
