@@ -163,15 +163,18 @@ VGA.drv
 28) 4V, Dynamic, 320x5..720x480
 29) 4E, Dynamic, 320x5..720x480
 30) 4H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
-31) 4T, Dynamic, 80x5..180x480, if enough video memory
-32) 4P, Dynamic, 320x5..720x480, if enough video memory
-33) 8P, Dynamic, 160x5..360x480, if enough video memory
-34) 8X, Dynamic, 160x5..360x480
+31) 4W, Dynamic, 320x200..720x480
+32) 4T, Dynamic, 80x5..180x480, if enough video memory
+33) 4P, Dynamic, 320x5..720x480, if enough video memory
+34) 8P, Dynamic, 160x5..360x480, if enough video memory
 35) 8D, Dynamic, 160x5..360x480, if enough video memory
 36) 8R, Dynamic, 160x5..360x480, if enough video memory
-37) 8XD, Dynamic, 160x5..360x480
-38) 8XR, Dynamic, 160x5..360x480
-39) 8H, Dynamic, 160x200..360x480, restricted by HGC's limitations (see below) 
+37) 8X, Dynamic, 160x5..360x480
+38) 8XD, Dynamic, 160x5..360x480
+39) 8XR, Dynamic, 160x5..360x480
+40) 8H, Dynamic, 160x200..360x480, restricted by HGC's limitations (see below)
+41) 8HD, Dynamic, 160x200..360x480, restricted by HGC's limitations (see below)
+42) 8HR, Dynamic, 160x200..360x480, restricted by HGC's limitations (see below) 
 
 Horizontal resolutions 320, 640, 360, 720 are supported with divisors 1, 2, 4. Vertical resoutions 350, 400, 480 are supported with divisors 1..64 (even values only, if >32) in graphic modes and 1..8/14/16/62 in text modes (depends on CharGenLoadMode setting: enabled - 62, disabled - 8/14/16, depends on CharGenFontMode/CharGenMonoMode, depends on HeightRoundMode). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31. ScanLineDouble bit, that is used by CRTC for CGA emulation, can double this value. Thus, max divisor is 62 in text modes. Don't forget to set Compatiblity to Experimental for 360/720 modes!
 
