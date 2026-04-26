@@ -49,7 +49,8 @@ Possible workarounds:
 2) WASD - move bitmap mask.
 3) R - reset bitmap mask.
 4) B - toggle text background: transparent, extent (red), width (blue).
-5) Mouse - cursor and mouse buttons state.
+5) C - toggle per-pixel copy testing.
+6) Mouse - cursor and mouse buttons state.
 
 **Global options:**
 
