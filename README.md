@@ -104,28 +104,30 @@ CGA.drv
 Horizontal resolutions 320 and 640 are supported with divisor 4. Vertial resolution 200 is supported with divisors 2..8. Values are rounded down to closest integers. Please note: only 2, 4 and 8 divisors use Standard timings - others require Compatiblity to be set to Experimental!
 
 EGA.drv
-1) 1P, Dynamic, 320x6..640x350
-2) 1C, Dynamic, 320x6..640x350, restricted by CGA's limitations (see below)
-3) 1H, Dynamic, 320x6..640x350, restricted by HGC's limitations (see below)
-4) 1M, Dynamic, 80x6..160x350, if enough video memory (MDA only), affected by Mono limitations (see below)
-5) 1T, Dynamic, 80x6..160x350, if enough video memory
-6) MP, Dynamic, 320x6..640x350
-7) ME, Dynamic, 320x6..640x350
-8) 640x350x60xME (MDA only)
-9) MC, Dynamic, 320x6..640x350, restricted by CGA's limitations (see below)
-3) MH, Dynamic, 320x6..640x350, restricted by HGC's limitations (see below)
-10) 160x25x60xMM (MDA only), affected by Mono limitations (see below)
-11) MT, Dynamic, 80x6..160x350, if enough video memory
-12) 2P, Dynamic, 320x6..640x350
-13) 2E, Dynamic, 320x6..640x350
-14) 2C, Dynamic, 320x6..640x350, restricted by CGA's limitations (see below)
-15) 2H, Dynamic, 320x6..640x350, restricted by HGC's limitations (see below)
-17) 2M, Dynamic, 80x6..160x350, if enough video memory, affected by Mono limitations (see below)
-18) 2T, Dynamic, 80x6..160x350, if enough video memory
-19) 4E, Dynamic, 320x6..640x350
-20) 4T, Dynamic, 80x6..160x350, if enough video memory
+1) 1P, Dynamic, 280x6..720x350
+2) 1C, Dynamic, 280x200..720x350, restricted by CGA's limitations (see below)
+3) 1H, Dynamic, 280x200..720x350, restricted by HGC's limitations (see below)
+4) 1EW, Dynamic, 280x6..720x350
+5) 1M, Dynamic, 70x6..180x350, if enough video memory (MDA only), affected by Mono limitations (see below)
+6) 1T, Dynamic, 70x6..180x350, if enough video memory
+7) MP, Dynamic, 280x6..720x350
+8) ME, Dynamic, 280x6..720x350
+9) MC, Dynamic, 320x200..720x350, restricted by CGA's limitations (see below)
+10) MH, Dynamic, 320x200..720x350, restricted by HGC's limitations (see below)
+11) MEW, Dynamic, 280x6..720x350
+12) MM, Dynamic, 70x6..180x350, affected by Mono limitations (see below)
+13) MT, Dynamic, 70x6..160x350, if enough video memory
+14) 2P, Dynamic, 280x6..720x350
+15) 2E, Dynamic, 280x6..720x350
+16) 2C, Dynamic, 320x200..720x350, restricted by CGA's limitations (see below)
+17) 2H, Dynamic, 320x200..720x350, restricted by HGC's limitations (see below)
+18) 2EW, Dynamic, 280x6..720x350
+19) 2M, Dynamic, 70x6..180x350, if enough video memory, affected by Mono limitations (see below)
+20) 2T, Dynamic, 70x6..180x350, if enough video memory
+21) 4E, Dynamic, 280x6..720x350
+22) 4T, Dynamic, 70x6..180x350, if enough video memory
 
-Horizontal resolutions 320 and 640 are supported with divisors 1, 2, 4. Vertial resolutions 200 and 350 with divisors 1..32 in EGA graphic modes, 200 with divisors 1..32 in CGA graphic modes, only 350 in MDA graphic modes, 200 and 350 with divisors 1..14/31 in EGA text modes, 200 with divisors 1..8/31 for CGA in text modes and only 1 for MDA in text modes (depends on CharGenLoadMode setting: enabled - 31, disabled - 14/8, depends on HeightRoundMode). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31.
+Horizontal resolutions 560, 640 and 720 are supported with divisors 1, 2, 4. Vertical resolutions 200 and 350 with divisors 1..32 in EGA graphic modes, 200 with divisors 1..32 in CGA graphic modes, only 350 in MDA graphic modes, 200 and 350 with divisors 1..14/31 in EGA text modes, 200 with divisors 1..8/31 for CGA in text modes and 350 with divisors 1..14/31 for MDA in text modes (depends on CharGenLoadMode setting: enabled - 31, disabled - 14/8, depends on HeightRoundMode). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31.
 
 Different amounts of video memory are supported. Amount of memory affects number of pages avilialbe. Modes, that require more than 64Kb VRAM (640x350 for example) are special case. If video card has only 64Kb VRAM installed - these modes can be no more than 2bpp only.
 
@@ -137,8 +139,8 @@ VGA.drv
 1) 1P, Dynamic, 160x5..720x480
 2) 1C, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
 3) 1H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
-4) 1EW, 320x200..720x480
-5) 1VD, 320x200..720x480
+4) 1EW, Dynamic, 320x5..720x480
+5) 1VD, Dynamic, 320x5..720x480
 6) 1M, Dynamic, 80x5..180x480, if enough video memory, affected by Mono limitations (see below)
 7) 1T, Dynamic, 80x5..180x480, if enough video memory
 8) MP, Dynamic, 80x5..180x480, if enough video memory
@@ -146,9 +148,9 @@ VGA.drv
 10) ME, Dynamic, 320x5..720x480
 11) MC, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
 12) MH, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
-13) MVW, 320x200..720x480
-14) MEW, 320x200..720x480
-15) MVD, 320x200..720x480
+13) MVW, Dynamic, 320x5..720x480
+14) MEW, Dynamic, 320x5..720x480
+15) MVD, Dynamic, 320x5..720x480
 16) MM, Dynamic, 80x5..180x480, if enough video memory (Mono only), affected by Mono limitations (see below)
 17) MT, Dynamic, 80x5..180x480, if enough video memory
 18) 2P, Dynamic, 80x5..180x480, if enough video memory
@@ -156,15 +158,15 @@ VGA.drv
 20) 2E, Dynamic, 320x5..720x480
 21) 2C, Dynamic, 320x200..720x480, restricted by CGA's limitations (see below)
 22) 2H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
-23) 2VW, 320x200..720x480
-24) 2EW, 320x200..720x480
-25) 2VW, 320x200..720x480
+23) 2VW, Dynamic, 320x5..720x480
+24) 2EW, Dynamic, 320x5..720x480
+25) 2VW, Dynamic, 320x5..720x480
 26) 2M, Dynamic, 80x5..180x480, if enough video memory, affected by Mono limitations (see below)
 27) 2T, Dynamic, 80x5..180x480, if enough video memory
 28) 4V, Dynamic, 320x5..720x480
 29) 4E, Dynamic, 320x5..720x480
 30) 4H, Dynamic, 320x200..720x480, restricted by HGC's limitations (see below)
-31) 4W, Dynamic, 320x200..720x480
+31) 4W, Dynamic, 320x5..720x480
 32) 4T, Dynamic, 80x5..180x480, if enough video memory
 33) 4P, Dynamic, 320x5..720x480, if enough video memory
 34) 8P, Dynamic, 160x5..360x480, if enough video memory
