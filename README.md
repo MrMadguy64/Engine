@@ -127,6 +127,10 @@ EGA.drv
 21) 4E, Dynamic, 280x6..720x350
 22) 4T, Dynamic, 70x6..180x350, if enough video memory
 
+**Testing needed!!!** Non standard modes' setting are based on several guesses due to lack of enough mode examples in EGA's VMT. These guesses should be verified. How testing should be performed: 1) Select standard video mode with corresponding resolution - 640/320 for 560/280 in case of EGA 350 modes and 640/320 for 720/360 in case of CGA 200/MDA 350 modes. 2) Note picture position. 3) Select non-standard video mode. 4) Is picture garbled? 5) Is there >4 offset to the left/right? 6) Make screenshots/videos.
+
+**Please note!!!** Video capture equipment and EGA->VGA converters may not be suitable for such tests due to possibility of ignoring sync signals and locking to picture instead! Proper syncing tests are required and therefore using real CRT monitor is recommended!
+
 Horizontal resolutions 560, 640 and 720 are supported with divisors 1, 2, 4. Vertical resolutions 200 and 350 with divisors 1..32 in EGA graphic modes, 200 with divisors 1..32 in CGA graphic modes, only 350 in MDA graphic modes, 200 and 350 with divisors 1..14/31 in EGA text modes, 200 with divisors 1..8/31 for CGA in text modes and 350 with divisors 1..14/31 for MDA in text modes (depends on CharGenLoadMode setting: enabled - 31, disabled - 14/8, depends on HeightRoundMode). Limited to 31 in text modes due to underline. Only way to hide it - to set it's position to 32. Thus fonts can't have 32 rows. Only 31.
 
 Different amounts of video memory are supported. Amount of memory affects number of pages avilialbe. Modes, that require more than 64Kb VRAM (640x350 for example) are special case. If video card has only 64Kb VRAM installed - these modes can be no more than 2bpp only.
